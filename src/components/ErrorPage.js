@@ -1,7 +1,7 @@
 import { React, useEffect } from "react";
 
 
-const Testimonials = ({title, description, canonical}) => {
+const ErrorPage = ({title, description, canonical}) => {
 
     useEffect(() => {
         document.title = title
@@ -16,4 +16,4 @@ const Testimonials = ({title, description, canonical}) => {
 };
 
 
-export default Testimonials;
+export default ErrorPage;
