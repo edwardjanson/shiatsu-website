@@ -94,9 +94,10 @@ const Heading = styled.div`
 `
 
 const Profile = styled.img`
-    width: 7rem;
+    width: 8rem;
     height: 100%;
     border-radius: 50%;
+    border: 3px solid #d1d1d1;
 `
 
 const H1 = styled.h1`
@@ -118,6 +119,7 @@ const List = styled.ul`
 `
 
 const Li = styled.li`
+    padding: 0 0.6rem;
 `
 
 const Paragraph = styled.p`

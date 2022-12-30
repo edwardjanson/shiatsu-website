@@ -63,8 +63,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    padding: 0.6rem;
-    margin: 0 0.5rem;
+    padding: 0.6rem 1.5rem;
   }
 
   h1, h2, h3 {
