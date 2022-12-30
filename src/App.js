@@ -1,4 +1,6 @@
 import React from "react";
+import styled from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
@@ -13,7 +15,10 @@ const App = () => {
 
   return (
     <Router>
+      <header>
         <NavBar />
+      </header>
+      <GlobalStyle/>
       <Routes>
         <Route exact path="/" element={
           < Homepage 
@@ -45,9 +50,47 @@ const App = () => {
           description="this is the description"
           />} />
       </Routes>
+      <Footer id="footer">© Betina Janson 2023</Footer>
     </Router>
   );
 }
 
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  p {
+    padding: 0.6rem;
+    margin: 0 0.5rem;
+  }
+
+  h1, h2, h3 {
+    font-family: "Bree Serif", Arial, Helvetica, sans-serif;
+    margin: 1rem 0.5rem;
+    color: #5a78b4;
+  }
+
+  body {
+    font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+    color: black;
+    max-width: 50rem;
+    background-color: #dbdbdb;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: #595959;
+    display: flex;
+    flex-direction: column;
+  }
+`
+
+const Footer = styled.span`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+`
 
 export default App;
