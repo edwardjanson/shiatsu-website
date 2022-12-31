@@ -101,7 +101,7 @@ const Profile = styled.img`
 `
 
 const H1 = styled.h1`
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding: 2rem;
     display: flex;
     justify-content: center;
@@ -109,7 +109,7 @@ const H1 = styled.h1`
 
 const H2 = styled.h2`
     font-size: 1.2rem;
-    padding: 1rem;
+    padding-top: 1rem;
     display: flex;
     justify-content: left;
 `

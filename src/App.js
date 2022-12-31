@@ -4,17 +4,20 @@ import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
+import ScrollToTop from "./components/ScrollToTop";
 import Homepage from "./components/Homepage";
-import InfoContact from "./components/InfoContact";
+import InfoTarifs from "./components/InfoTarifs";
 import ShinTai from "./components/ShinTai";
 import Testimonials from "./components/Testimonals";
 import ErrorPage from "./components/ErrorPage";
+import Contact from "./components/Contact";
 
 
 const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <header>
         <NavBar />
       </header>
@@ -26,11 +29,17 @@ const App = () => {
           description="this is the description"
           canonical="https://changethis.com/"
           />} />
-        <Route path="/info-contact" element={
-          < InfoContact 
+        <Route path="/info-tarifs" element={
+          < InfoTarifs 
           title="This is the Info page"
           description="this is the description"
-          canonical="https://changethis.com/info-contact"
+          canonical="https://changethis.com/info-tarifs"
+          />} />
+        <Route path="/contact" element={
+          < Contact 
+          title="This is the Info page"
+          description="this is the description"
+          canonical="https://changethis.com/contact"
           />} />
         <Route path="/shin-tai" element={
           < ShinTai 
@@ -75,7 +84,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: "Playfair Display", Arial, Helvetica, sans-serif;
     color: black;
-    max-width: 50rem;
+    max-width: 45rem;
     background-color: #dbdbdb;
     margin: 0 auto;
     font-size: 1rem;

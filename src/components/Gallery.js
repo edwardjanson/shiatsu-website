@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react';
 import styled from 'styled-components';
 
+import WaterBackground from '../background/water_background.jpeg';
+
 
 const Gallery = ({media}) => {
 
@@ -62,11 +64,24 @@ const Container = styled.div`
     width: 100vw;
     margin-left: -50vw;
     left: 50%;
-    background-color: #d1d1d1;
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+
+    :before {    
+        content: "";
+        background-image: url(${WaterBackground});
+        background-repeat: no-repeat;
+        background-position: center;
+        /* opacity: 0.8; */
+        background-size: cover;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+}
 `
 
 const Section = styled.div`
+    position: relative;
     display: flex;
     justify-content: center;
     max-width: 45rem;
@@ -121,6 +136,8 @@ const Iframe = styled.iframe`
     max-height: 100%;
     object-fit: contain;
     border: 0;
+    border-left: 3px solid #dbdbdb;
+    border-right: 3px solid #dbdbdb;
 
     &.hide {
         display: none;
@@ -131,6 +148,8 @@ const Image = styled.img`
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    border-left: 3px solid #dbdbdb;
+    border-right: 3px solid #dbdbdb;
 
     &.hide {
         display: none;

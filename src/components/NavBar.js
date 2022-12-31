@@ -28,7 +28,7 @@ const Header = ({handleScroll, buttonScroll}) => {
 
     return (
         <Section className={"section " + headerState} id="header">
-            <Logo><LogoImage src={process.env.PUBLIC_URL + "/media/logo_betina.png"}></LogoImage>Betina Janson</Logo>
+            <Logo><LogoImage src={process.env.PUBLIC_URL + "/media/logo_betina.png"}></LogoImage><Link to="/" onClick={() => updateBurgerOpen(false)}>Betina Janson</Link></Logo>
             <Burger className={burgerOpen ? "change" : ""} onClick={() => {
                 updateBurgerOpen(!burgerOpen);
                 setInitialLoad(false);
@@ -42,7 +42,8 @@ const Header = ({handleScroll, buttonScroll}) => {
                     <Link to="/" onClick={() => updateBurgerOpen(false)}>Home</Link>
                     <Link to="/shin-tai" onClick={() => updateBurgerOpen(false)}>Shin Tai</Link>
                     <Link to="/testimonials" onClick={() => updateBurgerOpen(false)}>Testimonials</Link>
-                    <Link to="/info-contact" onClick={() => updateBurgerOpen(false)}>Info Contact</Link>
+                    <Link to="/info-tarifs" onClick={() => updateBurgerOpen(false)}>Info & Tarifs</Link>
+                    <Link to="/contact" onClick={() => updateBurgerOpen(false)}>Contact</Link>
                 </NavLinks>
             </BurgerMenu>
         </Section>
@@ -77,10 +78,14 @@ const Logo = styled.h1`
     left: 1rem;
     font-size: 1.5rem;
     margin: 0;
-    color: #5a78b4;
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    a {
+        text-decoration: none;
+        color: #5a78b4;
+    }
 `
 
 const LogoImage = styled.img`
@@ -120,7 +125,7 @@ const BurgerBar = styled.div`
 
 const expandBurger = keyframes`
     0% {
-        transform: translateY(-79%);
+        transform: translateY(-80.5%);
     }
     100% { 
         transform: translateY(0);
@@ -134,7 +139,7 @@ const collapseBurger = keyframes`
         box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     }
     100% { 
-        transform: translateY(-79%);
+        transform: translateY(-80.5%);
         box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
     }
 `
@@ -148,7 +153,7 @@ const BurgerMenu = styled.div`
     gap: 1.5em;
     background-color: rgba(219, 219, 219, 0.98);
     width: 100%;
-    height: 19rem;
+    height: 20.5rem;
     opacity: 1;
     &.initial {
         animation-duration: 0s !important;
