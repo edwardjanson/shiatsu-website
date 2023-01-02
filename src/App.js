@@ -2,7 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 import { useState, useEffect } from "react";
 import { createGlobalStyle } from 'styled-components';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import ScrollToTop from "./components/ScrollToTop";
@@ -10,7 +10,6 @@ import Homepage from "./components/Homepage";
 import Treatments from "./components/Treatments";
 import ShinTai from "./components/ShinTai";
 import Testimonials from "./components/Testimonals";
-import ErrorPage from "./components/ErrorPage";
 import Contact from "./components/Contact";
 
 
@@ -76,7 +75,7 @@ const App = () => {
             change: "Sprache ändern",
             changeTo: "Englisch",
             changeCode: "en",
-            path: "/en"
+            path: "/en/"
           },
           urls: {
             homepage: {
@@ -120,33 +119,40 @@ const App = () => {
           < Homepage 
           selectedLanguage={selectedLanguage}
           canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.homepage.path}`}
+          hrefEnglish={`https://changethis.com${languageSettings.en.urls.homepage.path}`}
+          hrefGerman={`https://changethis.com${languageSettings.de.urls.homepage.path}`}
           />} />
         <Route exact path={languageSettings[selectedLanguage].urls.treatments.path} element={
           < Treatments 
           selectedLanguage={selectedLanguage}
           canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.treatments.path}`}
+          hrefEnglish={`https://changethis.com${languageSettings.en.urls.treatments.path}`}
+          hrefGerman={`https://changethis.com${languageSettings.de.urls.treatments.path}`}
           />} />
         <Route exact path={languageSettings[selectedLanguage].urls.contact.path} element={
           < Contact 
           selectedLanguage={selectedLanguage}
           canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.contact.path}`}
+          hrefEnglish={`https://changethis.com${languageSettings.en.urls.contact.path}`}
+          hrefGerman={`https://changethis.com${languageSettings.de.urls.contact.path}`}
           />} />
         <Route exact path={languageSettings[selectedLanguage].urls.shin_tai.path} element={
           < ShinTai 
           selectedLanguage={selectedLanguage}
           canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.shin_tai.path}`}
+          hrefEnglish={`https://changethis.com${languageSettings.en.urls.shin_tai.path}`}
+          hrefGerman={`https://changethis.com${languageSettings.de.urls.shin_tai.path}`}
           />} />
         <Route exact path={languageSettings[selectedLanguage].urls.testimonials.path} element={
           < Testimonials 
           selectedLanguage={selectedLanguage}
           canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.testimonials.path}`}
+          hrefEnglish={`https://changethis.com${languageSettings.en.urls.testimonials.path}`}
+          hrefGerman={`https://changethis.com${languageSettings.de.urls.testimonials.path}`}
           />} />
-        <Route exact path="*" element={
-          < ErrorPage 
-          languageSettings={languageSettings}
-          selectedLanguage={selectedLanguage} 
-          />} 
-        />
+        <Route path="*" element={
+          <Navigate to={languageSettings[selectedLanguage].urls.homepage.path} replace 
+        />} />
       </Routes>
       <Footer id="footer">
         <FooterLinks>

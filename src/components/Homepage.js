@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Gallery from "./Gallery";
 
-const Homepage = ({selectedLanguage, canonical}) => {
+const Homepage = ({selectedLanguage, canonical, hrefEnglish, hrefGerman}) => {
 
     const media = [
                     {images: [
@@ -114,7 +114,10 @@ const Homepage = ({selectedLanguage, canonical}) => {
         document.title = content[selectedLanguage].title;
         document.querySelector("meta[name='description']").setAttribute("content", content[selectedLanguage].description);
         document.querySelector("link[rel='canonical']").setAttribute("content", canonical);
-    }, [])
+        document.querySelector("link[hreflang='en']").setAttribute("href", hrefEnglish);
+        document.querySelector("link[hreflang='de']").setAttribute("href", hrefGerman);
+        document.querySelector("link[hreflang='x-default']").setAttribute("href", hrefEnglish);
+    }, [selectedLanguage])
 
     return (
         <Main>

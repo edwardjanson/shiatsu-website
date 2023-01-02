@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Gallery from "./Gallery";
 
 
-const ShinTai = ({canonical, selectedLanguage}) => {
+const ShinTai = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
 
     const content = 
         {en: {
@@ -48,7 +48,10 @@ const ShinTai = ({canonical, selectedLanguage}) => {
         document.title = content[selectedLanguage].title;
         document.querySelector("meta[name='description']").setAttribute("content", content[selectedLanguage].description);
         document.querySelector("link[rel='canonical']").setAttribute("content", canonical);
-    }, [])
+        document.querySelector("link[hreflang='en']").setAttribute("href", hrefEnglish);
+        document.querySelector("link[hreflang='de']").setAttribute("href", hrefGerman);
+        document.querySelector("link[hreflang='x-default']").setAttribute("href", hrefEnglish);
+    }, [selectedLanguage])
 
     return (
         <Main>

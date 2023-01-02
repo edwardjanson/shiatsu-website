@@ -2,7 +2,7 @@ import { React, useEffect } from "react";
 import styled from "styled-components";
 
 
-const Contact = ({canonical, selectedLanguage}) => {
+const Contact = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
 
     const content = 
     {en: {
@@ -33,7 +33,10 @@ const Contact = ({canonical, selectedLanguage}) => {
         document.title = content[selectedLanguage].title;
         document.querySelector("meta[name='description']").setAttribute("content", content[selectedLanguage].description);
         document.querySelector("link[rel='canonical']").setAttribute("content", canonical);
-    }, [])
+        document.querySelector("link[hreflang='en']").setAttribute("href", hrefEnglish);
+        document.querySelector("link[hreflang='de']").setAttribute("href", hrefGerman);
+        document.querySelector("link[hreflang='x-default']").setAttribute("href", hrefEnglish);
+    }, [selectedLanguage])
 
     return (
         <Main>
