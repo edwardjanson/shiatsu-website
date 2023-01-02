@@ -16,7 +16,7 @@ jobs:
         aws-region: eu-central-1
         
     - name: Build static site
-      run: npm install && npm run build
+      run: npm install && CI=false npm run build
     
     - name: Deploy static site to S3 bucket
       run: aws s3 sync . s3://shiatsu-website.com --delete
