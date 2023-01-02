@@ -12,7 +12,7 @@ const history = createBrowserHistory();
 
 // S3 routing solution taken from: https://via.studio/journal/hosting-a-reactjs-app-with-routing-on-aws-s3
 if (root) {
-	const path = (/#!(\/.*)$/.exec(window.location.hash) || [])[1];
+	const path = (/#!(.*)$/.exec(window.location.hash) || [])[1];
 	if (path) {
 		history.replace(path);
 	}
