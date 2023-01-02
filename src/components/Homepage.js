@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Gallery from "./Gallery";
 
-const Homepage = ({selectedLanguage, title, description, canonical}) => {
+const Homepage = ({selectedLanguage, canonical}) => {
 
     const media = [
                     {images: [
@@ -15,8 +15,10 @@ const Homepage = ({selectedLanguage, title, description, canonical}) => {
                 ]
     
     const content = 
-        {en: 
-            {h1: "Betina Janson – Shiatsu",
+        {en: {
+            title: "This is the Homepage",
+            description: "this is the description",
+            h1: "Betina Janson – Shiatsu",
             h2_1: "Origin and Philosophy",
             p_1: `Shiatsu is a traditional form of therapy from Japan. 
             Shiatsu shares the same roots as Chinese Acupuncture, both originating from the Traditional Chinese Medicine(TCM). 
@@ -106,9 +108,9 @@ const Homepage = ({selectedLanguage, title, description, canonical}) => {
         }
 
     useEffect(() => {
-        document.title = title
-        document.querySelector("meta[name='description']").setAttribute("content", description)
-        document.querySelector("link[rel='canonical']").setAttribute("content", canonical)
+        document.title = content[selectedLanguage].title;
+        document.querySelector("meta[name='description']").setAttribute("content", content[selectedLanguage].description);
+        document.querySelector("link[rel='canonical']").setAttribute("content", canonical);
     }, [])
 
     return (
@@ -143,6 +145,7 @@ const Homepage = ({selectedLanguage, title, description, canonical}) => {
                 <Li>{content[selectedLanguage].list_2[6]}</Li>
                 <Li>{content[selectedLanguage].list_2[7]}</Li>
             </List>
+            <br/>
             <Paragraph>{content[selectedLanguage].p_2}</Paragraph>
             <Break><img src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/></Break>
             <H2>{content[selectedLanguage].h2_4}</H2>

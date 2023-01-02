@@ -16,69 +16,126 @@ import Contact from "./components/Contact";
 
 const App = () => {
 
-  const [selectedLanguage, updateSelectedLanguage] = useState("en");
+  const [selectedLanguage, updateSelectedLanguage] = useState("de");
+
+  const languageSettings = 
+        {en: {
+              en: "English",
+              de: "Englisch",
+              languageCode: "en",
+              languageChange: {
+                change: "Change language",
+                changeTo: "German",
+                changeCode: "de",
+                path: "/"
+              },
+              urls: {
+                homepage: {
+                  name: "Home",
+                  path: "/en"
+                },
+                shin_tai: {
+                  name: "Shin Tai",
+                  path: "/en/shin-tai"
+                },
+                treatments: {
+                  name: "Treatments",
+                  path: "/en/treatments"
+                },
+                testimonials: {
+                  name: "Testimonials",
+                  path: "/en/testimonials"
+                },
+                contact: {
+                  name: "Contact",
+                  path: "/en/contact"
+                }
+              }
+        },
+
+        de: {
+          en: "German",
+          de: "Deutsch",
+          languageCode: "de",
+          languageChange: {
+            change: "Sprache ändern",
+            changeTo: "Englisch",
+            changeCode: "en",
+            path: "/en"
+          },
+          urls: {
+            homepage: {
+              name: "Startseite",
+              path: "/"
+            },
+            shin_tai: {
+              name: "Shin Tai",
+              path: "/shin-tai"
+            },
+            treatments: {
+              name: "Behandlungen",
+              path: "/behandlungen"
+            },
+            testimonials: {
+              name: "Testimonials",
+              path: "/testimonials"
+            },
+            contact: {
+              name: "Kontakt",
+              path: "/kontakt"
+            }
+          }
+      }
+  }
 
   return (
     <Router>
       <ScrollToTop />
       <header>
-        <NavBar selectedLanguage={selectedLanguage} />
+        <NavBar languageSettings={languageSettings} selectedLanguage={selectedLanguage} updateSelectedLanguage={updateSelectedLanguage} />
       </header>
       <GlobalStyle/>
       <Routes>
-        <Route exact path="/" element={
+        <Route exact path={languageSettings[selectedLanguage].urls.homepage.path} element={
           < Homepage 
           selectedLanguage={selectedLanguage}
-          title="This is the Homepage"
-          description="this is the description"
-          canonical="https://changethis.com/"
+          canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.homepage.path}`}
           />} />
-        <Route exact path="/treatments" element={
+        <Route exact path={languageSettings[selectedLanguage].urls.treatments.path} element={
           < Treatments 
           selectedLanguage={selectedLanguage}
-          title="This is the treatments page"
-          description="this is the description"
-          canonical="https://changethis.com/treatments"
+          canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.treatments.path}`}
           />} />
-        <Route exact path="/contact" element={
+        <Route exact path={languageSettings[selectedLanguage].urls.contact.path} element={
           < Contact 
           selectedLanguage={selectedLanguage}
-          title="This is the Info page"
-          description="this is the description"
-          canonical="https://changethis.com/contact"
+          canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.contact.path}`}
           />} />
-        <Route exact path="/shin-tai" element={
+        <Route exact path={languageSettings[selectedLanguage].urls.contact.shin_tai} element={
           < ShinTai 
           selectedLanguage={selectedLanguage}
-          title="This is the Shin Tai page"
-          description="this is the description"
-          canonical="https://changethis.com/shin-tai"
+          canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.shin_tai.path}`}
           />} />
-        <Route exact path="/testimonials" element={
+        <Route exact path={languageSettings[selectedLanguage].urls.testimonials.path} element={
           < Testimonials 
           selectedLanguage={selectedLanguage}
-          title="This is the Testimonials page"
-          description="this is the description"
-          canonical="https://changethis.com/testimonials"
+          canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.testimonials.path}`}
           />} />
         <Route exact path="*" element={
-          < ErrorPage
-          selectedLanguage={selectedLanguage}
-          title="This is the Error Page"
-          description="this is the description"
-          />} />
+          < ErrorPage selectedLanguage={selectedLanguage} />} 
+        />
       </Routes>
       <Footer id="footer">
         <FooterLinks>
-          <Link to="/">Home</Link>
+          <Link to={languageSettings[selectedLanguage].urls.homepage.path}>{languageSettings[selectedLanguage].urls.homepage.name}</Link>
           ·
-          <Link to="/shin-tai">Shin Tai</Link>
+          <Link to={languageSettings[selectedLanguage].urls.shin_tai.path}>{languageSettings[selectedLanguage].urls.shin_tai.name}</Link>
           ·
-          <Link to="/testimonials">Testimonials</Link>
+          <Link to={languageSettings[selectedLanguage].urls.testimonials.path}>{languageSettings[selectedLanguage].urls.testimonials.name}</Link>
           ·
-          <Link to="/treatments">Treatments</Link>
+          <Link to={languageSettings[selectedLanguage].urls.treatments.path}>{languageSettings[selectedLanguage].urls.treatments.name}</Link>
           ·
-          <Link to="/contact">Contact</Link>
+          <Link to={languageSettings[selectedLanguage].urls.contact.path}>{languageSettings[selectedLanguage].urls.contact.name}</Link>
         </FooterLinks>
         <Copyright>
           © Betina Janson 2023

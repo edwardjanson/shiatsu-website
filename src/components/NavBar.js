@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import { Link } from "react-router-dom";
 
 
-const Header = ({buttonScroll}) => {
+const NavBar = ({languageSettings, selectedLanguage, updateSelectedLanguage}) => {
 
     const [headerState, setHeaderState] = useState("show");
     const [burgerOpen, updateBurgerOpen] = useState(false);
@@ -11,20 +11,27 @@ const Header = ({buttonScroll}) => {
 
     useEffect(() => {
         let lastY = 0;
+        if (lastY === 0) setHeaderState("show");
         window.onscroll = () => {
             let y = window.scrollY;
-            if (y > lastY && y > 0) {
+            if (y > lastY) {
                 setHeaderState("hide");
                 updateBurgerOpen(false);
             }
-            if (y < lastY && y > 0) setHeaderState("show");
-            if (buttonScroll) {
-                setHeaderState("hide");
-                updateBurgerOpen(false);
-            }
+            if (y < lastY) setHeaderState("show");
             lastY = y;
         }      
-    }, [buttonScroll]);
+    }, []);
+
+    const navLinks = [];
+    let languageIndex = 0;
+
+    for (let key in languageSettings[selectedLanguage].urls) {
+        languageIndex += 1;
+        navLinks.push(
+            <Link to={languageSettings[selectedLanguage].urls[key].path} onClick={() => updateBurgerOpen(false)} key={languageIndex}>{languageSettings[selectedLanguage].urls[key].name}</Link>
+        )
+    }
 
     return (
         <Section className={"section " + headerState} id="header">
@@ -39,11 +46,15 @@ const Header = ({buttonScroll}) => {
 
             <BurgerMenu className={(burgerOpen ? "opened" : "closed") + (initialLoad ? " initial": "")}>
                 <NavLinks className={burgerOpen ? "opened" : "closed"}>
-                    <Link to="/" onClick={() => updateBurgerOpen(false)}>Home</Link>
-                    <Link to="/shin-tai" onClick={() => updateBurgerOpen(false)}>Shin Tai</Link>
-                    <Link to="/testimonials" onClick={() => updateBurgerOpen(false)}>Testimonials</Link>
-                    <Link to="/treatments" onClick={() => updateBurgerOpen(false)}>Treatments</Link>
-                    <Link to="/contact" onClick={() => updateBurgerOpen(false)}>Contact</Link>
+                    {navLinks}
+                    <br/>
+                    <Language>{languageSettings[selectedLanguage].languageChange.change}: 
+                        <Link to={languageSettings[selectedLanguage].languageChange.path} onClick={() => {
+                            updateBurgerOpen(false);
+                            updateSelectedLanguage(languageSettings[selectedLanguage].languageChange.changeCode);
+                            }
+                        }> {languageSettings[selectedLanguage].languageChange.changeTo}</Link>
+                    </Language>
                 </NavLinks>
             </BurgerMenu>
         </Section>
@@ -59,7 +70,7 @@ const Section = styled.div`
     justify-content: center;
     width: 100%;
     max-width: 45rem;
-    transition: 0.5s;
+    transition: 0.3s;
     margin: 0 auto;
     
     &.hide {
@@ -107,7 +118,7 @@ const Burger = styled.div`
         display: block;
         height: 2px;
         margin: 6px 0;
-        transition: 0.75s;
+        transition: 0.5s;
     }
     &.change:before {
         transform: translateY(8px) rotate(-45deg);
@@ -125,7 +136,7 @@ const BurgerBar = styled.div`
 
 const expandBurger = keyframes`
     0% {
-        transform: translateY(-80.5%);
+        transform: translateY(-84%);
     }
     100% { 
         transform: translateY(0);
@@ -139,7 +150,7 @@ const collapseBurger = keyframes`
         box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     }
     100% { 
-        transform: translateY(-80.5%);
+        transform: translateY(-84%);
         box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
     }
 `
@@ -153,13 +164,13 @@ const BurgerMenu = styled.div`
     gap: 1.5em;
     background-color: rgba(235, 235, 235, 0.98);
     width: 100%;
-    height: 20.5rem;
+    height: 25rem;
     opacity: 1;
     &.initial {
         animation-duration: 0s !important;
     }
     &.opened {
-        animation: ${expandBurger} 0.75s;
+        animation: ${expandBurger} 0.5s;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -167,7 +178,7 @@ const BurgerMenu = styled.div`
         animation-fill-mode: forwards;
     }
     &.closed {
-        animation: ${collapseBurger} 0.75s;
+        animation: ${collapseBurger} 0.5s;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -195,4 +206,8 @@ const NavLinks = styled.div`
     }
 `
 
-export default Header;
+const Language = styled.div`
+    font-size: 1.2rem;
+`
+
+export default NavBar;
