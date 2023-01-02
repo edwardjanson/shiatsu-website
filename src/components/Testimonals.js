@@ -44,6 +44,17 @@ const H2 = styled.h2`
     justify-content: left;
 `
 
+const Break = styled.div`
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+
+    img {
+        height: 2.5rem;
+        opacity: 0.7;
+    }
+`
+
 const Paragraph = styled.p`
 `
 

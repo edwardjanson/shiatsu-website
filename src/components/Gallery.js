@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import styled from 'styled-components';
 
-import WaterBackground from '../background/water_background.jpeg';
+import MountainBackground from '../background/mountains.jpeg';
 
 
 const Gallery = ({media}) => {
@@ -67,10 +67,9 @@ const Container = styled.div`
 
     :before {    
         content: "";
-        background-image: url(${WaterBackground});
+        background-image: url(${MountainBackground});
         background-repeat: no-repeat;
         background-position: center;
-        /* opacity: 0.8; */
         background-size: cover;
         position: absolute;
         top: 0px;
@@ -136,8 +135,6 @@ const Iframe = styled.iframe`
     max-height: 100%;
     object-fit: contain;
     border: 0;
-    border-left: 3px solid #dbdbdb;
-    border-right: 3px solid #dbdbdb;
 
     &.hide {
         display: none;
@@ -148,8 +145,6 @@ const Image = styled.img`
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    border-left: 3px solid #dbdbdb;
-    border-right: 3px solid #dbdbdb;
 
     &.hide {
         display: none;

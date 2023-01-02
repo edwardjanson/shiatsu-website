@@ -20,7 +20,15 @@ const Contact = ({title, description, canonical}) => {
             <Paragraph>
                 Email: <a href="mailto:betinajanson@gmail.com">betinajanson@gmail.com</a>
             </Paragraph>
-            <H2>Location</H2>           
+            <Break><img src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/></Break>
+            <H2>Location</H2>
+            <Paragraph>Address:</Paragraph> 
+            <Paragraph>         
+                <Address target="_blank" href="https://www.google.com/maps/place/Miesbacher+Str.+77,+83703+Gmund+am+Tegernsee,+Germany/@47.7689603,11.7444875,17z/data=!3m1!4b1!4m5!3m4!1s0x479d8d110478284f:0x51fc88b53ebc21ad!8m2!3d47.7689603!4d11.7466762">
+                    Miesbacher Strasse 77<br/>
+                    8703 Gmund Am Tegernsee
+                </Address>     
+            </Paragraph>       
             <Map src={process.env.PUBLIC_URL + "/media/map.png"}/>
         </Main>
     )
@@ -45,9 +53,25 @@ const H2 = styled.h2`
     justify-content: left;
 `
 
+const Break = styled.div`
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+
+    img {
+        height: 2.5rem;
+        opacity: 0.7;
+    }
+`
+
 const Map = styled.img`
     max-width: 90%;
     margin: 2rem 5%;
+`
+
+const Address = styled.a`
+    display: flex;
+    line-height: 1.5rem;
 `
 
 const Paragraph = styled.p`

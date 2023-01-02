@@ -27,7 +27,7 @@ const ShinTai = ({title, description, canonical}) => {
             <Gallery media={media} />
             <H1>Shin Tai</H1>
             <Paragraph>
-                Shin Tai Shiatsu has been developed by Saul Goodman in the 1980s and1990s. 
+                Shin Tai Shiatsu has been developed by Saul Goodman in the 1980s and 1990s. 
                 He has been the founder of the International School of Shiatsu in Kiental (Switzerland). 
                 After long years of working with Shiatsu, Osteopathy and Craniosacral Therapy, Saul Goodman developed the technics of Shin Tai.
             </Paragraph>

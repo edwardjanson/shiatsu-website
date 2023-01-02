@@ -120,6 +120,7 @@ const Homepage = ({selectedLanguage, title, description, canonical}) => {
             </Heading>
             <H2>{content[selectedLanguage].h2_1}</H2>
             <Paragraph>{content[selectedLanguage].p_1}</Paragraph>
+            <Break><img src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/></Break>
             <H2>{content[selectedLanguage].h2_2}</H2>
             <List>
                 <Li>{content[selectedLanguage].list_1[0]}</Li>
@@ -130,6 +131,7 @@ const Homepage = ({selectedLanguage, title, description, canonical}) => {
                 <Li>{content[selectedLanguage].list_1[5]}</Li>
                 <Li>{content[selectedLanguage].list_1[6]}</Li>
             </List>
+            <Break><img src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/></Break>
             <H2>{content[selectedLanguage].h2_3}</H2>
             <List>
                 <Li>{content[selectedLanguage].list_2[0]}</Li>
@@ -142,6 +144,7 @@ const Homepage = ({selectedLanguage, title, description, canonical}) => {
                 <Li>{content[selectedLanguage].list_2[7]}</Li>
             </List>
             <Paragraph>{content[selectedLanguage].p_2}</Paragraph>
+            <Break><img src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/></Break>
             <H2>{content[selectedLanguage].h2_4}</H2>
             <Paragraph>{content[selectedLanguage].p_3}</Paragraph>
             <Paragraph>{content[selectedLanguage].p_4}</Paragraph>
@@ -151,24 +154,22 @@ const Homepage = ({selectedLanguage, title, description, canonical}) => {
 };
 
 const Main = styled.div`
-    max-width: 50rem;
     margin: 4rem auto;
+    width: 100%;
 `
 
 const Heading = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
     padding-top: 1rem;
-    padding-right: 2rem;
-    margin-bottom: -2rem;
+    padding-right: 3rem;
 `
 
 const Profile = styled.img`
     width: 8rem;
     height: 100%;
-    border-radius: 50%;
+    border-radius: 3%;
     border: 3px solid #d1d1d1;
 `
 
@@ -184,6 +185,17 @@ const H2 = styled.h2`
     padding-top: 1rem;
     display: flex;
     justify-content: left;
+`
+
+const Break = styled.div`
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+
+    img {
+        height: 2.5rem;
+        opacity: 0.7;
+    }
 `
 
 const List = styled.ul`

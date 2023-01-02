@@ -21,6 +21,7 @@ const Treatments = ({title, description, canonical}) => {
             <Paragraph>
                 I now live in Gmund am Tegernsee (Germany).
             </Paragraph>
+            <Break><img src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/></Break>
             <H2>Tarifs</H2>
             <Paragraph>
                 Session duration 1 hour: 100 Euros
@@ -56,6 +57,17 @@ const H2 = styled.h2`
     padding-top: 1rem;
     display: flex;
     justify-content: left;
+`
+
+const Break = styled.div`
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+
+    img {
+        height: 2.5rem;
+        opacity: 0.7;
+    }
 `
 
 const List = styled.ul`

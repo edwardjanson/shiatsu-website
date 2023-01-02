@@ -2,7 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 import { useState } from "react";
 import { createGlobalStyle } from 'styled-components';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import ScrollToTop from "./components/ScrollToTop";
@@ -22,7 +22,7 @@ const App = () => {
     <Router>
       <ScrollToTop />
       <header>
-        <NavBar />
+        <NavBar selectedLanguage={selectedLanguage} />
       </header>
       <GlobalStyle/>
       <Routes>
@@ -33,42 +33,57 @@ const App = () => {
           description="this is the description"
           canonical="https://changethis.com/"
           />} />
-        <Route path="/treatments" element={
+        <Route exact path="/treatments" element={
           < Treatments 
           selectedLanguage={selectedLanguage}
           title="This is the treatments page"
           description="this is the description"
           canonical="https://changethis.com/treatments"
           />} />
-        <Route path="/contact" element={
+        <Route exact path="/contact" element={
           < Contact 
           selectedLanguage={selectedLanguage}
           title="This is the Info page"
           description="this is the description"
           canonical="https://changethis.com/contact"
           />} />
-        <Route path="/shin-tai" element={
+        <Route exact path="/shin-tai" element={
           < ShinTai 
           selectedLanguage={selectedLanguage}
           title="This is the Shin Tai page"
           description="this is the description"
           canonical="https://changethis.com/shin-tai"
           />} />
-        <Route path="/testimonials" element={
+        <Route exact path="/testimonials" element={
           < Testimonials 
           selectedLanguage={selectedLanguage}
           title="This is the Testimonials page"
           description="this is the description"
           canonical="https://changethis.com/testimonials"
           />} />
-        <Route path="*" element={
+        <Route exact path="*" element={
           < ErrorPage
           selectedLanguage={selectedLanguage}
           title="This is the Error Page"
           description="this is the description"
           />} />
       </Routes>
-      <Footer id="footer">© Betina Janson 2023</Footer>
+      <Footer id="footer">
+        <FooterLinks>
+          <Link to="/">Home</Link>
+          ·
+          <Link to="/shin-tai">Shin Tai</Link>
+          ·
+          <Link to="/testimonials">Testimonials</Link>
+          ·
+          <Link to="/treatments">Treatments</Link>
+          ·
+          <Link to="/contact">Contact</Link>
+        </FooterLinks>
+        <Copyright>
+          © Betina Janson 2023
+        </Copyright>
+      </Footer>
     </Router>
   );
 }
@@ -86,28 +101,50 @@ const GlobalStyle = createGlobalStyle`
 
   h1, h2, h3 {
     font-family: "Bree Serif", Arial, Helvetica, sans-serif;
-    margin: 1rem 0.5rem;
+    margin: 1rem 1.5rem;
     color: #5a78b4;
   }
 
   body {
-    font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+    font-family: "Arsenal", Arial, Helvetica, sans-serif;
     color: black;
     max-width: 45rem;
-    background-color: #dbdbdb;
+    background-color: #ebebeb;
     margin: 0 auto;
-    font-size: 1rem;
-    color: #595959;
+    font-size: 1.1rem;
+    color: #333333;
     display: flex;
     flex-direction: column;
   }
+
+  a {
+    color: #5a78b4;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: #5a78b4;
+  }
 `
 
-const Footer = styled.span`
+const Footer = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
+  flex-direction: column;
   padding: 1rem;
+  gap: 1rem;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px -10px 10px -10px;
+`
+
+const FooterLinks = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+`
+
+const Copyright = styled.span`
 `
 
 export default App;

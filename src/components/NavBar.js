@@ -151,7 +151,7 @@ const BurgerMenu = styled.div`
     right: 0;
     top: 0;
     gap: 1.5em;
-    background-color: rgba(219, 219, 219, 0.98);
+    background-color: rgba(235, 235, 235, 0.98);
     width: 100%;
     height: 20.5rem;
     opacity: 1;
