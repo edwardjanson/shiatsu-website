@@ -2,27 +2,52 @@ import { React, useEffect } from "react";
 import styled from "styled-components";
 
 
-const Contact = ({title, description, canonical}) => {
+const Contact = ({canonical, selectedLanguage}) => {
+
+    const content = 
+    {en: {
+            title: `This is the Treatments page`,
+            description: `this is the description`,
+            h1: `Contact & Location`,
+            h2_1: `Contact`,
+            p_1: `Telephone`,
+            p_2: `Email`,
+            h2_2: `Location`,
+            p_3: `Address`
+        },
+
+    de: {
+            title: `This is the Treatments page`,
+            description: `this is the description`,
+            h1: `Kontak & Lage`,
+            h2_1: `Kontakt`,
+            p_1: `Telefon`,
+            p_2: `Email`,
+            h2_2: `Lage`,
+            p_3: `Adresse`
+        }
+    }
 
     useEffect(() => {
-        document.title = title
-        document.querySelector("meta[name='description']").setAttribute("content", description)
-        document.querySelector("link[rel='canonical']").setAttribute("content", canonical)
+        document.querySelector("html").setAttribute("lang", selectedLanguage);
+        document.title = content[selectedLanguage].title;
+        document.querySelector("meta[name='description']").setAttribute("content", content[selectedLanguage].description);
+        document.querySelector("link[rel='canonical']").setAttribute("content", canonical);
     }, [])
 
     return (
         <Main>
-            <H1>Contact & Location</H1>
-            <H2>Contact</H2>
+            <H1>{content[selectedLanguage].h1}</H1>
+            <H2>{content[selectedLanguage].h2_1}</H2>
             <Paragraph>
-                Telephone: <a href="+49 (0) 162 2845417">+49 (0) 162 2845417</a>
+                {content[selectedLanguage].p_1}: <a href="+49 (0) 162 2845417">+49 (0) 162 2845417</a>
             </Paragraph>
             <Paragraph>
-                Email: <a href="mailto:betinajanson@gmail.com">betinajanson@gmail.com</a>
+                {content[selectedLanguage].p_2}: <a href="mailto:betinajanson@gmail.com">betinajanson@gmail.com</a>
             </Paragraph>
             <Break><img src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/></Break>
-            <H2>Location</H2>
-            <Paragraph>Address:</Paragraph> 
+            <H2>{content[selectedLanguage].h2_2}</H2>
+            <Paragraph>{content[selectedLanguage].p_3}:</Paragraph> 
             <Paragraph>         
                 <Address target="_blank" href="https://www.google.com/maps/place/Miesbacher+Str.+77,+83703+Gmund+am+Tegernsee,+Germany/@47.7689603,11.7444875,17z/data=!3m1!4b1!4m5!3m4!1s0x479d8d110478284f:0x51fc88b53ebc21ad!8m2!3d47.7689603!4d11.7466762">
                     Miesbacher Strasse 77<br/>

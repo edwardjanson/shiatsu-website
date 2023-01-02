@@ -2,25 +2,46 @@ import { React, useEffect } from "react";
 import styled from "styled-components";
 
 
-const Contact = ({title, description, canonical}) => {
+const Contact = ({canonical, selectedLanguage}) => {
+
+    const content = 
+        {en: {
+                title: `This is the Testimonials page`,
+                description: `this is the description`,
+                h1: `Testimonials`,
+                h2_1: `Martina`,
+                p_1: `"Sowohl Schulter-/Nackenschmerzen als auch Schmerzen im Lendenbereich, die bis in die Knie ausstrahlten, haben mich lange Zeit begleitet. Die Schmerzen waren z.T. so stark, dass ich nur noch 20 Minuten spazieren gehen konnte. 
+                Einiges hatte ich probiert, auch Akupunktur. 
+                Eine Freundin empfahl mir, zu Betina zu gehen … Mittlerweile bin ich (fast) schmerzfrei, wandere wieder mehrere Stunden, meiner Computerarbeit gehe ich problemlos nach. 
+                Shiatsu ist für mich sofortige und andauernde Entspannung, die Behandlung löst meine Muskelverspannungen. 
+                Ich bin sehr froh, diese Therapie und Betina gefunden zu haben."`
+            },
+
+        de: {
+                title: `This is the Testimonials page`,
+                description: `this is the description`,
+                h1: `Testimonials`,
+                h2_1: `Martina`,
+                p_1: `"Sowohl Schulter-/Nackenschmerzen als auch Schmerzen im Lendenbereich, die bis in die Knie ausstrahlten, haben mich lange Zeit begleitet. Die Schmerzen waren z.T. so stark, dass ich nur noch 20 Minuten spazieren gehen konnte. 
+                Einiges hatte ich probiert, auch Akupunktur. 
+                Eine Freundin empfahl mir, zu Betina zu gehen … Mittlerweile bin ich (fast) schmerzfrei, wandere wieder mehrere Stunden, meiner Computerarbeit gehe ich problemlos nach. 
+                Shiatsu ist für mich sofortige und andauernde Entspannung, die Behandlung löst meine Muskelverspannungen. 
+                Ich bin sehr froh, diese Therapie und Betina gefunden zu haben."`
+            }
+        }
 
     useEffect(() => {
-        document.title = title
-        document.querySelector("meta[name='description']").setAttribute("content", description)
-        document.querySelector("link[rel='canonical']").setAttribute("content", canonical)
+        document.querySelector("html").setAttribute("lang", selectedLanguage);
+        document.title = content[selectedLanguage].title;
+        document.querySelector("meta[name='description']").setAttribute("content", content[selectedLanguage].description);
+        document.querySelector("link[rel='canonical']").setAttribute("content", canonical);
     }, [])
 
     return (
         <Main>
-            <H1>Testimonials</H1>
-            <H2>Martina</H2>
-            <Paragraph>
-                "Sowohl Schulter-/Nackenschmerzen als auch Schmerzen im Lendenbereich, die bis in die Knie ausstrahlten, haben mich lange Zeit begleitet. Die Schmerzen waren z.T. so stark, dass ich nur noch 20 Minuten spazieren gehen konnte. 
-                Einiges hatte ich probiert, auch Akupunktur. 
-                Eine Freundin empfahl mir, zu Betina zu gehen … Mittlerweile bin ich (fast) schmerzfrei, wandere wieder mehrere Stunden, meiner Computerarbeit gehe ich problemlos nach. 
-                Shiatsu ist für mich sofortige und andauernde Entspannung, die Behandlung löst meine Muskelverspannungen. 
-                Ich bin sehr froh, diese Therapie und Betina gefunden zu haben."
-            </Paragraph>
+            <H1>{content[selectedLanguage].h1}</H1>
+            <H2>{content[selectedLanguage].h2_1}</H2>
+            <Paragraph>{content[selectedLanguage].p_1}</Paragraph>
         </Main>
     )
 };

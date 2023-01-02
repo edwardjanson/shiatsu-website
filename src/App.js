@@ -1,8 +1,8 @@
 import React from "react";
 import styled from 'styled-components';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createGlobalStyle } from 'styled-components';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import ScrollToTop from "./components/ScrollToTop";
@@ -16,7 +16,22 @@ import Contact from "./components/Contact";
 
 const App = () => {
 
-  const [selectedLanguage, updateSelectedLanguage] = useState("de");
+  const [selectedLanguage, updateSelectedLanguage] = useState(null);
+  const [pageLoad, updatePageLoad] = useState(false);
+
+  useEffect(() => {
+    updatePageLoad(false);
+
+    if (!pageLoad) {
+        if (window.location.pathname.startsWith("/en/")) {
+          updateSelectedLanguage("en");
+          updatePageLoad(true);
+        } else {
+          updateSelectedLanguage("de");
+          updatePageLoad(true);
+        }
+    }
+  }, [])
 
   const languageSettings = 
         {en: {
@@ -32,23 +47,23 @@ const App = () => {
               urls: {
                 homepage: {
                   name: "Home",
-                  path: "/en"
+                  path: "/en/"
                 },
                 shin_tai: {
                   name: "Shin Tai",
-                  path: "/en/shin-tai"
+                  path: "/en/shin-tai/"
                 },
                 treatments: {
                   name: "Treatments",
-                  path: "/en/treatments"
+                  path: "/en/treatments/"
                 },
                 testimonials: {
                   name: "Testimonials",
-                  path: "/en/testimonials"
+                  path: "/en/testimonials/"
                 },
                 contact: {
                   name: "Contact",
-                  path: "/en/contact"
+                  path: "/en/contact/"
                 }
               }
         },
@@ -70,29 +85,34 @@ const App = () => {
             },
             shin_tai: {
               name: "Shin Tai",
-              path: "/shin-tai"
+              path: "/shin-tai/"
             },
             treatments: {
               name: "Behandlungen",
-              path: "/behandlungen"
+              path: "/behandlungen/"
             },
             testimonials: {
               name: "Testimonials",
-              path: "/testimonials"
+              path: "/testimonials/"
             },
             contact: {
               name: "Kontakt",
-              path: "/kontakt"
+              path: "/kontakt/"
             }
           }
       }
   }
 
   return (
+    pageLoad ?
     <Router>
       <ScrollToTop />
       <header>
-        <NavBar languageSettings={languageSettings} selectedLanguage={selectedLanguage} updateSelectedLanguage={updateSelectedLanguage} />
+        <NavBar 
+        languageSettings={languageSettings}
+        selectedLanguage={selectedLanguage} 
+        updateSelectedLanguage={updateSelectedLanguage} 
+        />
       </header>
       <GlobalStyle/>
       <Routes>
@@ -111,7 +131,7 @@ const App = () => {
           selectedLanguage={selectedLanguage}
           canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.contact.path}`}
           />} />
-        <Route exact path={languageSettings[selectedLanguage].urls.contact.shin_tai} element={
+        <Route exact path={languageSettings[selectedLanguage].urls.shin_tai.path} element={
           < ShinTai 
           selectedLanguage={selectedLanguage}
           canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.shin_tai.path}`}
@@ -122,7 +142,10 @@ const App = () => {
           canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.testimonials.path}`}
           />} />
         <Route exact path="*" element={
-          < ErrorPage selectedLanguage={selectedLanguage} />} 
+          < ErrorPage 
+          languageSettings={languageSettings}
+          selectedLanguage={selectedLanguage} 
+          />} 
         />
       </Routes>
       <Footer id="footer">
@@ -142,6 +165,8 @@ const App = () => {
         </Copyright>
       </Footer>
     </Router>
+    :
+    ""
   );
 }
 

@@ -16,98 +16,101 @@ const Homepage = ({selectedLanguage, canonical}) => {
     
     const content = 
         {en: {
-            title: "This is the Homepage",
-            description: "this is the description",
-            h1: "Betina Janson – Shiatsu",
-            h2_1: "Origin and Philosophy",
-            p_1: `Shiatsu is a traditional form of therapy from Japan. 
-            Shiatsu shares the same roots as Chinese Acupuncture, both originating from the Traditional Chinese Medicine(TCM). 
-            Shiatsu is known for its healing power without the use of medication. 
-            According to the Traditional Chinese Medicine, the physical and psychological symptoms arising in the human body, are the source of an unbalance of the energy flow in our body. 
-            By balancing the flow of energy in the meridians, Shiatsu can relieve many conditions, help prevent the build-up of stress, and restore vitality and well-being. 
-            Literally translated as "finger pressure", Shiatsu uses comfortable pressure from the thumbs and palms applied to to the energy channels and acupressure points in the body. 
-            Gentle stretches and rotations of the limbs and joints may as well be included.`,
-            h2_2: "Benefits of Shiatsu",
-            list_1: 
-                [
-                    "Calming, grounding and deeply relaxing for body and mind - this alone will stimulate your own self-healing abilities",
-                    "Creates a sense of well-being",
-                    "Helps to release mental and emotional stress",
-                    "Relieves stiffness and tension, improves posture",
-                    "Helps to restore and rebalance energy levels",
-                    "Helps clear toxins from the body",
-                    "Improves immunity"
-                ]
-            ,
-            h2_3: "Conditions helped by Shiatsu",
-            list_2: 
-                [
-                    "Headaches and migraines",
-                    "Stress and anxiety",
-                    "Backache",
-                    "Neck and shoulder tensions",
-                    "Digestive problems",
-                    "Menstrual problems",
-                    "Joint pain and reduced mobility",
-                    "Fatigue and insomnia"
-                ],
-            p_2: `This list is not complete.
-            Regular Shiatsu treatment is a good way to prevent health problems arising.
-            The number of treatments required will depend on your general state of health and the acute or chronic nature of the conditions needing help.`,
-            h2_4: "Your Shiatsu Session",
-            p_3: "Your session will last 1 hour (first session 1H15).",
-            p_4: `You will wear comfortable clothing ( preferably cotton) and the session will take place on a futon. 
-            You will receive a treatment adapted to your personal needs.`,
-            p_5: "After the treatment your practitioner may give you advice ( exercises, stretching, food recommendations...)."
+                title: `This is the Homepage`,
+                description: `this is the description`,
+                h1: `Betina Janson – Shiatsu`,
+                h2_1: `Origin and Philosophy`,
+                p_1: `Shiatsu is a traditional form of therapy from Japan. 
+                Shiatsu shares the same roots as Chinese Acupuncture, both originating from the Traditional Chinese Medicine (TCM).`,
+                p_2: `Shiatsu is known for its healing power without the use of medication. 
+                According to the Traditional Chinese Medicine, the physical and psychological symptoms arising in the human body, are the source of an unbalance of the energy flow in our body. 
+                By balancing the flow of energy in the meridians, Shiatsu can relieve many conditions, help prevent the build-up of stress, and restore vitality and well-being. 
+                Literally translated as "finger pressure", Shiatsu uses comfortable pressure from the thumbs and palms applied to to the energy channels and acupressure points in the body. 
+                Gentle stretches and rotations of the limbs and joints may as well be included.`,
+                h2_2: `Benefits of Shiatsu`,
+                list_1: 
+                    [
+                        `Calming, grounding and deeply relaxing for body and mind - this alone will stimulate your own self-healing abilities`,
+                        `Creates a sense of well-being`,
+                        `Helps to release mental and emotional stress`,
+                        `Relieves stiffness and tension, improves posture`,
+                        `Helps to restore and rebalance energy levels`,
+                        `Helps clear toxins from the body`,
+                        `Improves immunity`
+                    ]
+                ,
+                h2_3: `Conditions helped by Shiatsu`,
+                list_2: 
+                    [
+                        `Headaches and migraines`,
+                        `Stress and anxiety`,
+                        `Backache`,
+                        `Neck and shoulder tensions`,
+                        `Digestive problems`,
+                        `Menstrual problems`,
+                        `Joint pain and reduced mobility`,
+                        `Fatigue and insomnia`
+                    ],
+                p_3: `This list is not complete.
+                Regular Shiatsu treatment is a good way to prevent health problems arising.
+                The number of treatments required will depend on your general state of health and the acute or chronic nature of the conditions needing help.`,
+                h2_4: `Your Shiatsu Session`,
+                p_4: `Your session will last 1 hour (first session 1H15).`,
+                p_5: `You will wear comfortable clothing (preferably cotton) and the session will take place on a futon. 
+                You will receive a treatment adapted to your personal needs.`,
+                p_6: `After the treatment your practitioner may give you advice (exercises, stretching, food recommendations...).`
             },
 
-        de: 
-            {h1: "Betina Janson – Shiatsu",
-            h2_1: "Was ist Shiatsu?",
-            p_1: `Shiatsu stammt ursprünglich aus Japan und ist vom japanischen Gesundheitsministerium als therapeutische Körperarbeit anerkannte Methode. 
-            Die Wurzeln des Shiatsu liegen, genauso wie bei der Akupunktur, in der traditionellen chinesischen Medizin (TCM).
-            In einem Bericht der EU-Kommission zu komplementären Verfahren von 1997, wird Shiatsu als eine von 8 Methoden namentlich erwähnt.
-            In Europa hat sich, dank des japanischen Shiatsu Therapeuten und Professor der Psychologie Dr Masunaga, ein therapeutisches Shiatsu entwickelt, das eine wirksame Behandlungsform bei einer Vielzahl von Beschwerden und Krankheiten darstellt. 
-            Bei der Shiatsu-Akupressur-Massage werden verschiedene Akupressurpunkte für eine geraume Zeit sanft gehalten. 
-            Dabei kann es sich, je nach Zone, um den Daumen, die Handinnenfläche, das Knie oder den Ellebogen handeln. 
-            Gut ausgebildete Shiatsu-Therapeuten sind somit in der Lage gezielt energetische Muster auszugleichen, Blockaden zu lösen und die Selbstheilungskräfte des Menschen zu aktivieren und zu stärken. 
-            Daher ist Shiatsu eine wirksame Therapie bei einer Vielzahl von körperlichen und seelischen Beschwerden und in Lebenskrisen, welche zu angestautem Stress, Erschöpfung und Verspannungen führen können. 
-            In der Geborgenheit und Ruhe der Behandlung kann der Mensch seinen eigenen Körper wieder wahrnehmen und Kräfte sammeln.`,
-            h2_2: "Wirkung von Shiatsu",
-            list_1: 
-                [
-                    "Stressbewältigung durch tiefe Entspannung von Körper und Seele",
-                    "Durch die Harmonisierung der Körperenergien werden die Selbstheilungskräfte wachgerufen",
-                    "Verhilft dem Körper beim Ausscheiden von Toxinen",
-                    "Stabilisiert das Immunsystem und fördert somit die Gesundheitserhaltung",
-                    "Regeneration bei Erschöpfungszuständen",
-                    "Sensibilisierung der eigenen Körperwahrnehmung",
-                    "Löst Verkrampfungen und Versteifungen und verbessert dadurch die Körperhaltung"
-                ]
-            ,
-            h2_3: "Beschwerden und Krankheiten",
-            list_2: 
-                [
-                    "Kopfschmerzen und Migraine",
-                    "Stress und Angstzustände",
-                    "Rückenschmerzen",
-                    "Nacken- und Schulterschmerzen",
-                    "Verdauungsprobleme (Bauchschmerzen)",
-                    "Menstruationsstörungen und -Beschwerden",
-                    "Gelenkschmerzen und bei eingeschränkter Beweglichkeit",
-                    "Müdigkeit und Schlafstörungen"
-                ],
-            p_2: `Diese Liste ist nicht vollständig.
-            Regelmässige Shiatsubehandlungen sind ein wirksames Mittel um gegen Krankheiten vorzubeugen.`,
-            h2_4: "Shiatsu Behandlung",
-            p_3: "Die Dauer beträgt 1 Stunde (erste Behandlung 90 Minuten).",
-            p_4: `Bei der Behandlung tragen sie bequeme Kleidung (wenn möglich aus Baumwolle). 
-            Die Behandlung findet auf einem Futon auf dem Boden statt und richtet sich nach ihren persönlichen Bedürfnissen aus.`,
-            p_5: "Nach der Behandlung wird der Therapeut ihnen weitere Ratschläge geben (Dehnübungen, Entspannungs- Lockerungsübungen, Ernährungsempfehlungen…)."
+        de: {
+                title: `This is the Homepage`,
+                description: `this is the description`,
+                h1: `Betina Janson – Shiatsu`,
+                h2_1: `Was ist Shiatsu?`,
+                p_1: `Shiatsu stammt ursprünglich aus Japan und ist vom japanischen Gesundheitsministerium als therapeutische Körperarbeit anerkannte Methode. 
+                Die Wurzeln des Shiatsu liegen, genauso wie bei der Akupunktur, in der traditionellen chinesischen Medizin (TCM).`,
+                p_2:`In einem Bericht der EU-Kommission zu komplementären Verfahren von 1997, wird Shiatsu als eine von 8 Methoden namentlich erwähnt.
+                In Europa hat sich, dank des japanischen Shiatsu Therapeuten und Professor der Psychologie Dr Masunaga, ein therapeutisches Shiatsu entwickelt, das eine wirksame Behandlungsform bei einer Vielzahl von Beschwerden und Krankheiten darstellt. 
+                Bei der Shiatsu-Akupressur-Massage werden verschiedene Akupressurpunkte für eine geraume Zeit sanft gehalten. 
+                Dabei kann es sich, je nach Zone, um den Daumen, die Handinnenfläche, das Knie oder den Ellebogen handeln. 
+                Gut ausgebildete Shiatsu-Therapeuten sind somit in der Lage gezielt energetische Muster auszugleichen, Blockaden zu lösen und die Selbstheilungskräfte des Menschen zu aktivieren und zu stärken. 
+                Daher ist Shiatsu eine wirksame Therapie bei einer Vielzahl von körperlichen und seelischen Beschwerden und in Lebenskrisen, welche zu angestautem Stress, Erschöpfung und Verspannungen führen können. 
+                In der Geborgenheit und Ruhe der Behandlung kann der Mensch seinen eigenen Körper wieder wahrnehmen und Kräfte sammeln.`,
+                h2_2: `Wirkung von Shiatsu`,
+                list_1: 
+                    [
+                        `Stressbewältigung durch tiefe Entspannung von Körper und Seele`,
+                        `Durch die Harmonisierung der Körperenergien werden die Selbstheilungskräfte wachgerufen`,
+                        `Verhilft dem Körper beim Ausscheiden von Toxinen`,
+                        `Stabilisiert das Immunsystem und fördert somit die Gesundheitserhaltung`,
+                        `Regeneration bei Erschöpfungszuständen`,
+                        `Sensibilisierung der eigenen Körperwahrnehmung`,
+                        `Löst Verkrampfungen und Versteifungen und verbessert dadurch die Körperhaltung`
+                    ]
+                ,
+                h2_3: `Beschwerden und Krankheiten`,
+                list_2: 
+                    [
+                        `Kopfschmerzen und Migraine`,
+                        `Stress und Angstzustände`,
+                        `Rückenschmerzen`,
+                        `Nacken- und Schulterschmerzen`,
+                        `Verdauungsprobleme (Bauchschmerzen)`,
+                        `Menstruationsstörungen und -Beschwerden`,
+                        `Gelenkschmerzen und bei eingeschränkter Beweglichkeit`,
+                        `Müdigkeit und Schlafstörungen`
+                    ],
+                p_3: `Diese Liste ist nicht vollständig.
+                Regelmässige Shiatsubehandlungen sind ein wirksames Mittel um gegen Krankheiten vorzubeugen.`,
+                h2_4: `Shiatsu Behandlung`,
+                p_4: `Die Dauer beträgt 1 Stunde (erste Behandlung 90 Minuten).`,
+                p_5: `Bei der Behandlung tragen sie bequeme Kleidung (wenn möglich aus Baumwolle). 
+                Die Behandlung findet auf einem Futon auf dem Boden statt und richtet sich nach ihren persönlichen Bedürfnissen aus.`,
+                p_6: `Nach der Behandlung wird der Therapeut ihnen weitere Ratschläge geben (Dehnübungen, Entspannungs- Lockerungsübungen, Ernährungsempfehlungen…).`
             }
         }
 
     useEffect(() => {
+        document.querySelector("html").setAttribute("lang", selectedLanguage);
         document.title = content[selectedLanguage].title;
         document.querySelector("meta[name='description']").setAttribute("content", content[selectedLanguage].description);
         document.querySelector("link[rel='canonical']").setAttribute("content", canonical);
@@ -122,6 +125,7 @@ const Homepage = ({selectedLanguage, canonical}) => {
             </Heading>
             <H2>{content[selectedLanguage].h2_1}</H2>
             <Paragraph>{content[selectedLanguage].p_1}</Paragraph>
+            <Paragraph>{content[selectedLanguage].p_2}</Paragraph>
             <Break><img src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/></Break>
             <H2>{content[selectedLanguage].h2_2}</H2>
             <List>
@@ -146,12 +150,12 @@ const Homepage = ({selectedLanguage, canonical}) => {
                 <Li>{content[selectedLanguage].list_2[7]}</Li>
             </List>
             <br/>
-            <Paragraph>{content[selectedLanguage].p_2}</Paragraph>
+            <Paragraph>{content[selectedLanguage].p_3}</Paragraph>
             <Break><img src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/></Break>
             <H2>{content[selectedLanguage].h2_4}</H2>
-            <Paragraph>{content[selectedLanguage].p_3}</Paragraph>
             <Paragraph>{content[selectedLanguage].p_4}</Paragraph>
             <Paragraph>{content[selectedLanguage].p_5}</Paragraph>
+            <Paragraph>{content[selectedLanguage].p_6}</Paragraph>
         </Main>
     )
 };

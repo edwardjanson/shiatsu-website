@@ -35,7 +35,7 @@ const NavBar = ({languageSettings, selectedLanguage, updateSelectedLanguage}) =>
 
     return (
         <Section className={"section " + headerState} id="header">
-            <Logo><LogoImage src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/><Link to="/" onClick={() => updateBurgerOpen(false)}>Betina Janson</Link></Logo>
+            <Logo><LogoImage src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/><Link to={languageSettings[selectedLanguage].urls.homepage.path} onClick={() => updateBurgerOpen(false)}>Betina Janson</Link></Logo>
             <Burger className={burgerOpen ? "change" : ""} onClick={() => {
                 updateBurgerOpen(!burgerOpen);
                 setInitialLoad(false);

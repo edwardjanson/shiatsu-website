@@ -4,7 +4,34 @@ import styled from "styled-components";
 import Gallery from "./Gallery";
 
 
-const ShinTai = ({title, description, canonical}) => {
+const ShinTai = ({canonical, selectedLanguage}) => {
+
+    const content = 
+        {en: {
+                title: `This is the Testimonials page`,
+                description: `this is the description`,
+                h1: `Shin Tai`,
+                p_1: `Shin Tai Shiatsu has been developed by Saul Goodman in the 1980s and 1990s. 
+                He has been the founder of the International School of Shiatsu in Kiental (Switzerland). 
+                After long years of working with Shiatsu, Osteopathy and Craniosacral Therapy, Saul Goodman developed the technics of Shin Tai.`,
+                p_2: `The various technics of ShianTai do have a complementary influence to those used with Shiatsu on the fascias, articulations and the muscles. 
+                These technics allow to liberate toxins and help to align the whole body structure.`,
+                p_3: `Saul Goodman's webpage :`
+            },
+
+        de: {
+                title: `This is the Testimonials page`,
+                description: `this is the description`,
+                h1: `Shin Tai`,
+                p_1: `Shin Tai Shiatsu ist in den 80er und 90er Jahre von dem Amerikaner Saul Goodman entwickelt worden. 
+                Er ist ebenfalls der Gründer der Internationalen Shiatsu Schule (ISS) in Kiental (Schweiz). 
+                Nach langjähriger Tätigkeit mit Shiatsu, Osteopathie und der Craniosacraltherapie, entwickelte Saul Goodman die Techniken des Shin Tai.`,
+                p_2: `Die verschiedenen Techniken des Shin Tai haben eine ergänzende Wirkung zu den Techniken der Shiatsu Therapie. 
+                Hierbei wurden von Saul Goodman Techniken eingesetzt die dem Bindegewebe, Muskeln und Gelenken helfen Verspannungen und Toxine im Körper zu lösen und auszuscheiden. 
+                Dieser Vorgang hilft die Körperhaltung zu verbessern und Schmerzen zu lindern.`,
+                p_3: `Internetseite von Saul Goodman :`
+            }
+        }
 
     const media = [
                     {images: [
@@ -17,26 +44,20 @@ const ShinTai = ({title, description, canonical}) => {
                 ]
 
     useEffect(() => {
-        document.title = title
-        document.querySelector("meta[name='description']").setAttribute("content", description)
-        document.querySelector("link[rel='canonical']").setAttribute("content", canonical)
+        document.querySelector("html").setAttribute("lang", selectedLanguage);
+        document.title = content[selectedLanguage].title;
+        document.querySelector("meta[name='description']").setAttribute("content", content[selectedLanguage].description);
+        document.querySelector("link[rel='canonical']").setAttribute("content", canonical);
     }, [])
 
     return (
         <Main>
             <Gallery media={media} />
-            <H1>Shin Tai</H1>
+            <H1>{content[selectedLanguage].h1}</H1>
+            <Paragraph>{content[selectedLanguage].p_1}</Paragraph>
+            <Paragraph>{content[selectedLanguage].p_2}</Paragraph>
             <Paragraph>
-                Shin Tai Shiatsu has been developed by Saul Goodman in the 1980s and 1990s. 
-                He has been the founder of the International School of Shiatsu in Kiental (Switzerland). 
-                After long years of working with Shiatsu, Osteopathy and Craniosacral Therapy, Saul Goodman developed the technics of Shin Tai.
-            </Paragraph>
-            <Paragraph>
-                The various technics of ShianTai do have a complementary influence to those used with Shiatsu on the fascias, articulations and the muscles. 
-                These technics allow to liberate toxins and help to align the whole body structure.
-            </Paragraph>
-            <Paragraph>
-                Saul Goodman's webpage : <a href="https://shintaiinternational.com/" target="_blank">www.shintaiinternational.com</a>
+                {content[selectedLanguage].p_3} <a href="https://shintaiinternational.com/" target="_blank">www.shintaiinternational.com</a>
             </Paragraph>
         </Main>
     )
@@ -52,19 +73,6 @@ const H1 = styled.h1`
     padding: 2rem;
     display: flex;
     justify-content: center;
-`
-
-const H2 = styled.h2`
-    font-size: 1.2rem;
-    padding: 1rem;
-    display: flex;
-    justify-content: left;
-`
-
-const List = styled.ul`
-`
-
-const Li = styled.li`
 `
 
 const Paragraph = styled.p`
