@@ -12,19 +12,16 @@ const Contact = ({title, description, canonical}) => {
 
     return (
         <Main>
-            <H1>Shin Tai</H1>
+            <H1>Contact & Location</H1>
+            <H2>Contact</H2>
             <Paragraph>
-                Shin Tai Shiatsu has been developed by Saul Goodman in the 1980s and1990s. 
-                He has been the founder of the International School of Shiatsu in Kiental (Switzerland). 
-                After long years of working with Shiatsu, Osteopathy and Craniosacral Therapy, Saul Goodman developed the technics of Shin Tai.
+                Telephone: <a href="+49 (0) 162 2845417">+49 (0) 162 2845417</a>
             </Paragraph>
             <Paragraph>
-                The various technics of ShianTai do have a complementary influence to those used with Shiatsu on the fascias, articulations and the muscles. 
-                These technics allow to liberate toxins and help to align the whole body structure.
+                Email: <a href="mailto:betinajanson@gmail.com">betinajanson@gmail.com</a>
             </Paragraph>
-            <Paragraph>
-                Saul Goodman's webpage : <a href="https://shintaiinternational.com/" target="_blank">www.shintaiinternational.com</a>
-            </Paragraph>
+            <H2>Location</H2>           
+            <Map src={process.env.PUBLIC_URL + "/media/map.png"}/>
         </Main>
     )
 };
@@ -35,7 +32,7 @@ const Main = styled.div`
 `
 
 const H1 = styled.h1`
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding: 2rem;
     display: flex;
     justify-content: center;
@@ -48,10 +45,9 @@ const H2 = styled.h2`
     justify-content: left;
 `
 
-const List = styled.ul`
-`
-
-const Li = styled.li`
+const Map = styled.img`
+    max-width: 90%;
+    margin: 2rem 5%;
 `
 
 const Paragraph = styled.p`

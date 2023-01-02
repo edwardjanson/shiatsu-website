@@ -1,12 +1,13 @@
 import React from "react";
 import styled from 'styled-components';
+import { useState } from "react";
 import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import ScrollToTop from "./components/ScrollToTop";
 import Homepage from "./components/Homepage";
-import InfoTarifs from "./components/InfoTarifs";
+import Treatments from "./components/Treatments";
 import ShinTai from "./components/ShinTai";
 import Testimonials from "./components/Testimonals";
 import ErrorPage from "./components/ErrorPage";
@@ -14,6 +15,8 @@ import Contact from "./components/Contact";
 
 
 const App = () => {
+
+  const [selectedLanguage, updateSelectedLanguage] = useState("en");
 
   return (
     <Router>
@@ -25,36 +28,42 @@ const App = () => {
       <Routes>
         <Route exact path="/" element={
           < Homepage 
+          selectedLanguage={selectedLanguage}
           title="This is the Homepage"
           description="this is the description"
           canonical="https://changethis.com/"
           />} />
-        <Route path="/info-tarifs" element={
-          < InfoTarifs 
-          title="This is the Info page"
+        <Route path="/treatments" element={
+          < Treatments 
+          selectedLanguage={selectedLanguage}
+          title="This is the treatments page"
           description="this is the description"
-          canonical="https://changethis.com/info-tarifs"
+          canonical="https://changethis.com/treatments"
           />} />
         <Route path="/contact" element={
           < Contact 
+          selectedLanguage={selectedLanguage}
           title="This is the Info page"
           description="this is the description"
           canonical="https://changethis.com/contact"
           />} />
         <Route path="/shin-tai" element={
           < ShinTai 
+          selectedLanguage={selectedLanguage}
           title="This is the Shin Tai page"
           description="this is the description"
           canonical="https://changethis.com/shin-tai"
           />} />
         <Route path="/testimonials" element={
           < Testimonials 
+          selectedLanguage={selectedLanguage}
           title="This is the Testimonials page"
           description="this is the description"
           canonical="https://changethis.com/testimonials"
           />} />
         <Route path="*" element={
           < ErrorPage
+          selectedLanguage={selectedLanguage}
           title="This is the Error Page"
           description="this is the description"
           />} />

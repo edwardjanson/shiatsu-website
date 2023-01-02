@@ -48,7 +48,7 @@ const Main = styled.div`
 `
 
 const H1 = styled.h1`
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding: 2rem;
     display: flex;
     justify-content: center;

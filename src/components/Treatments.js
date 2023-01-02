@@ -2,7 +2,7 @@ import { React, useEffect } from "react";
 import styled from "styled-components";
 
 
-const InfoTarifs = ({title, description, canonical}) => {
+const Treatments = ({title, description, canonical}) => {
 
     useEffect(() => {
         document.title = title
@@ -12,7 +12,7 @@ const InfoTarifs = ({title, description, canonical}) => {
 
     return (
         <Main>
-            <H1>Information & Tarifs</H1>
+            <H1>Shiatsu Treatments</H1>
             <H2>My Training</H2>
             <Paragraph>
                 After four years of studies at the International School of Shiatsu (ISS) in Geneva, I graduated in 2010. 
@@ -45,7 +45,7 @@ const Main = styled.div`
 `
 
 const H1 = styled.h1`
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding: 2rem;
     display: flex;
     justify-content: center;
@@ -67,4 +67,4 @@ const Li = styled.li`
 const Paragraph = styled.p`
 `
 
-export default InfoTarifs;
+export default Treatments;

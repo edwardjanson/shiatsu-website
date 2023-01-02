@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import { Link } from "react-router-dom";
 
 
-const Header = ({handleScroll, buttonScroll}) => {
+const Header = ({buttonScroll}) => {
 
     const [headerState, setHeaderState] = useState("show");
     const [burgerOpen, updateBurgerOpen] = useState(false);
@@ -28,7 +28,7 @@ const Header = ({handleScroll, buttonScroll}) => {
 
     return (
         <Section className={"section " + headerState} id="header">
-            <Logo><LogoImage src={process.env.PUBLIC_URL + "/media/logo_betina.png"}></LogoImage><Link to="/" onClick={() => updateBurgerOpen(false)}>Betina Janson</Link></Logo>
+            <Logo><LogoImage src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/><Link to="/" onClick={() => updateBurgerOpen(false)}>Betina Janson</Link></Logo>
             <Burger className={burgerOpen ? "change" : ""} onClick={() => {
                 updateBurgerOpen(!burgerOpen);
                 setInitialLoad(false);
@@ -42,7 +42,7 @@ const Header = ({handleScroll, buttonScroll}) => {
                     <Link to="/" onClick={() => updateBurgerOpen(false)}>Home</Link>
                     <Link to="/shin-tai" onClick={() => updateBurgerOpen(false)}>Shin Tai</Link>
                     <Link to="/testimonials" onClick={() => updateBurgerOpen(false)}>Testimonials</Link>
-                    <Link to="/info-tarifs" onClick={() => updateBurgerOpen(false)}>Info & Tarifs</Link>
+                    <Link to="/treatments" onClick={() => updateBurgerOpen(false)}>Treatments</Link>
                     <Link to="/contact" onClick={() => updateBurgerOpen(false)}>Contact</Link>
                 </NavLinks>
             </BurgerMenu>
@@ -58,7 +58,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 50rem;
+    max-width: 45rem;
     transition: 0.5s;
     margin: 0 auto;
     
