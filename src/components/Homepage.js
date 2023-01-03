@@ -16,8 +16,8 @@ const Homepage = ({selectedLanguage, canonical, hrefEnglish, hrefGerman}) => {
     
     const content = 
         {en: {
-                title: `This is the Homepage`,
-                description: `this is the description`,
+                title: `Shiatsu Tegernsee | Betina Janson`,
+                description: ``,
                 h1: `Betina Janson – Shiatsu`,
                 h2_1: `Origin and Philosophy`,
                 p_1: `Shiatsu is a traditional form of therapy from Japan. 
@@ -62,7 +62,7 @@ const Homepage = ({selectedLanguage, canonical, hrefEnglish, hrefGerman}) => {
             },
 
         de: {
-                title: `This is the Homepage`,
+                title: `Shiatsu am Tegernsee | Betina Janson`,
                 description: `this is the description`,
                 h1: `Betina Janson – Shiatsu`,
                 h2_1: `Was ist Shiatsu?`,

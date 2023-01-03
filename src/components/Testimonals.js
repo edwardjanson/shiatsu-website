@@ -6,8 +6,8 @@ const Contact = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
 
     const content = 
         {en: {
-                title: `This is the Testimonials page`,
-                description: `this is the description`,
+                title: `Testimonials | Betina Janson Shiatsu`,
+                description: ``,
                 h1: `Testimonials`,
                 h2_1: `Martina`,
                 p_1: `"Sowohl Schulter-/Nackenschmerzen als auch Schmerzen im Lendenbereich, die bis in die Knie ausstrahlten, haben mich lange Zeit begleitet. Die Schmerzen waren z.T. so stark, dass ich nur noch 20 Minuten spazieren gehen konnte. 
@@ -18,8 +18,8 @@ const Contact = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
             },
 
         de: {
-                title: `This is the Testimonials page`,
-                description: `this is the description`,
+                title: `Testimonials | Betina Janson Shiatsu am Tegernsee`,
+                description: ``,
                 h1: `Testimonials`,
                 h2_1: `Martina`,
                 p_1: `"Sowohl Schulter-/Nackenschmerzen als auch Schmerzen im Lendenbereich, die bis in die Knie ausstrahlten, haben mich lange Zeit begleitet. Die Schmerzen waren z.T. so stark, dass ich nur noch 20 Minuten spazieren gehen konnte. 

@@ -118,37 +118,37 @@ const App = () => {
         <Route exact path={languageSettings[selectedLanguage].urls.homepage.path} element={
           < Homepage 
           selectedLanguage={selectedLanguage}
-          canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.homepage.path}`}
-          hrefEnglish={`https://changethis.com${languageSettings.en.urls.homepage.path}`}
-          hrefGerman={`https://changethis.com${languageSettings.de.urls.homepage.path}`}
+          canonical={`https://www.shiatsutegernsee.de${languageSettings[selectedLanguage].urls.homepage.path}`}
+          hrefEnglish={`https://www.shiatsutegernsee.de${languageSettings.en.urls.homepage.path}`}
+          hrefGerman={`https://www.shiatsutegernsee.de${languageSettings.de.urls.homepage.path}`}
           />} />
         <Route exact path={languageSettings[selectedLanguage].urls.treatments.path} element={
           < Treatments 
           selectedLanguage={selectedLanguage}
-          canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.treatments.path}`}
-          hrefEnglish={`https://changethis.com${languageSettings.en.urls.treatments.path}`}
-          hrefGerman={`https://changethis.com${languageSettings.de.urls.treatments.path}`}
+          canonical={`https://www.shiatsutegernsee.de${languageSettings[selectedLanguage].urls.treatments.path}`}
+          hrefEnglish={`https://www.shiatsutegernsee.de${languageSettings.en.urls.treatments.path}`}
+          hrefGerman={`https://www.shiatsutegernsee.de${languageSettings.de.urls.treatments.path}`}
           />} />
         <Route exact path={languageSettings[selectedLanguage].urls.contact.path} element={
           < Contact 
           selectedLanguage={selectedLanguage}
-          canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.contact.path}`}
-          hrefEnglish={`https://changethis.com${languageSettings.en.urls.contact.path}`}
-          hrefGerman={`https://changethis.com${languageSettings.de.urls.contact.path}`}
+          canonical={`https://www.shiatsutegernsee.de${languageSettings[selectedLanguage].urls.contact.path}`}
+          hrefEnglish={`https://www.shiatsutegernsee.de${languageSettings.en.urls.contact.path}`}
+          hrefGerman={`https://www.shiatsutegernsee.de${languageSettings.de.urls.contact.path}`}
           />} />
         <Route exact path={languageSettings[selectedLanguage].urls.shin_tai.path} element={
           < ShinTai 
           selectedLanguage={selectedLanguage}
-          canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.shin_tai.path}`}
-          hrefEnglish={`https://changethis.com${languageSettings.en.urls.shin_tai.path}`}
-          hrefGerman={`https://changethis.com${languageSettings.de.urls.shin_tai.path}`}
+          canonical={`https://www.shiatsutegernsee.de${languageSettings[selectedLanguage].urls.shin_tai.path}`}
+          hrefEnglish={`https://www.shiatsutegernsee.de${languageSettings.en.urls.shin_tai.path}`}
+          hrefGerman={`https://www.shiatsutegernsee.de${languageSettings.de.urls.shin_tai.path}`}
           />} />
         <Route exact path={languageSettings[selectedLanguage].urls.testimonials.path} element={
           < Testimonials 
           selectedLanguage={selectedLanguage}
-          canonical={`https://changethis.com${languageSettings[selectedLanguage].urls.testimonials.path}`}
-          hrefEnglish={`https://changethis.com${languageSettings.en.urls.testimonials.path}`}
-          hrefGerman={`https://changethis.com${languageSettings.de.urls.testimonials.path}`}
+          canonical={`https://www.shiatsutegernsee.de${languageSettings[selectedLanguage].urls.testimonials.path}`}
+          hrefEnglish={`https://www.shiatsutegernsee.de${languageSettings.en.urls.testimonials.path}`}
+          hrefGerman={`https://www.shiatsutegernsee.de${languageSettings.de.urls.testimonials.path}`}
           />} />
         <Route path="*" element={
           <Navigate to={languageSettings[selectedLanguage].urls.homepage.path} replace 
