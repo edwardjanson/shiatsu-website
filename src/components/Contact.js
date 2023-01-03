@@ -57,7 +57,7 @@ const Contact = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
             <Paragraph>         
                 <Address target="_blank" href="https://www.google.com/maps/place/Miesbacher+Str.+77,+83703+Gmund+am+Tegernsee,+Germany/@47.7689603,11.7444875,17z/data=!3m1!4b1!4m5!3m4!1s0x479d8d110478284f:0x51fc88b53ebc21ad!8m2!3d47.7689603!4d11.7466762">
                     Miesbacher Strasse 77<br/>
-                    8703 Gmund Am Tegernsee
+                    83703 Gmund Am Tegernsee
                 </Address>     
             </Paragraph>       
             <Map src={MapImage}/>
