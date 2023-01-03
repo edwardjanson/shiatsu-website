@@ -2,12 +2,16 @@ import { React, useEffect } from "react";
 import styled from "styled-components";
 
 import Gallery from "./Gallery";
+import LogoPng from "../images/logo_betina.png";
+import ZenShiatsu from "../images/zen_shiatsu_1.png";
+import ProfileImage from "../images/betina_janson.jpg";
+
 
 const Homepage = ({selectedLanguage, canonical, hrefEnglish, hrefGerman}) => {
 
     const media = [
                     {images: [
-                        "/media/zen_shiatsu_1.png"
+                        ZenShiatsu
                     ]},
                     {videos: [
                         "https://www.youtube.com/embed/OYWSySDHc20"
@@ -124,12 +128,12 @@ const Homepage = ({selectedLanguage, canonical, hrefEnglish, hrefGerman}) => {
             <Gallery media={media} />
             <Heading>
                 <H1>{content[selectedLanguage].h1}</H1>
-                <Profile src={process.env.PUBLIC_URL + "/media/betina_janson.jpg"}></Profile>
+                <Profile src={ProfileImage}></Profile>
             </Heading>
             <H2>{content[selectedLanguage].h2_1}</H2>
             <Paragraph>{content[selectedLanguage].p_1}</Paragraph>
             <Paragraph>{content[selectedLanguage].p_2}</Paragraph>
-            <Break><img src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/></Break>
+            <Break><img src={LogoPng}/></Break>
             <H2>{content[selectedLanguage].h2_2}</H2>
             <List>
                 <Li>{content[selectedLanguage].list_1[0]}</Li>
@@ -140,7 +144,7 @@ const Homepage = ({selectedLanguage, canonical, hrefEnglish, hrefGerman}) => {
                 <Li>{content[selectedLanguage].list_1[5]}</Li>
                 <Li>{content[selectedLanguage].list_1[6]}</Li>
             </List>
-            <Break><img src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/></Break>
+            <Break><img src={LogoPng}/></Break>
             <H2>{content[selectedLanguage].h2_3}</H2>
             <List>
                 <Li>{content[selectedLanguage].list_2[0]}</Li>
@@ -154,7 +158,7 @@ const Homepage = ({selectedLanguage, canonical, hrefEnglish, hrefGerman}) => {
             </List>
             <br/>
             <Paragraph>{content[selectedLanguage].p_3}</Paragraph>
-            <Break><img src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/></Break>
+            <Break><img src={LogoPng}/></Break>
             <H2>{content[selectedLanguage].h2_4}</H2>
             <Paragraph>{content[selectedLanguage].p_4}</Paragraph>
             <Paragraph>{content[selectedLanguage].p_5}</Paragraph>

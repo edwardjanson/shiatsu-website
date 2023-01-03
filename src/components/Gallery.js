@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import styled from 'styled-components';
 
-import MountainBackground from '../background/mountains.jpeg';
+import MountainBackground from "../images/mountains.jpeg";
 
 
 const Gallery = ({media}) => {
@@ -15,7 +15,7 @@ const Gallery = ({media}) => {
         if (Object.keys(type)[0] === "images") {
             imageCount.current = type.images.length;
             const ImagesFound = type.images.map((image, imageIndex) => {
-                return <Image className={imageIndex === activeMedia? "show" : "hide"} src={process.env.PUBLIC_URL + image} key={imageIndex}/>
+                return <Image className={imageIndex === activeMedia? "show" : "hide"} src={image} key={imageIndex}/>
             })
             mediaFound.push(ImagesFound)
         }

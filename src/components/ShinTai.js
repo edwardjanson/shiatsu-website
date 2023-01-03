@@ -2,6 +2,9 @@ import { React, useEffect } from "react";
 import styled from "styled-components";
 
 import Gallery from "./Gallery";
+import ShinTai1 from "../images/shin_tai_1.png";
+import ShinTai2 from "../images/shin_tai_2.png";
+import ShinTai3 from "../images/shin_tai_3.png";
 
 
 const ShinTai = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
@@ -35,9 +38,9 @@ const ShinTai = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
 
     const media = [
                     {images: [
-                        "/media/shin_tai_1.png",
-                        "/media/shin_tai_2.png",
-                        "/media/shin_tai_3.png"
+                        ShinTai1,
+                        ShinTai2,
+                        ShinTai3
                         ]},
                     {videos: [
                         ]}

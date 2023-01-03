@@ -1,6 +1,9 @@
 import { React, useEffect } from "react";
 import styled from "styled-components";
 
+import MapImage from "../images/map.png";
+import LogoPng from "../images/logo_betina.png";
+
 
 const Contact = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
 
@@ -43,12 +46,12 @@ const Contact = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
             <H1>{content[selectedLanguage].h1}</H1>
             <H2>{content[selectedLanguage].h2_1}</H2>
             <Paragraph>
-                {content[selectedLanguage].p_1}: <a href="+49 (0) 162 2845417">+49 (0) 162 2845417</a>
+                {content[selectedLanguage].p_1}: <a href="tel:+491622845417">+49 (0) 162 2845417</a>
             </Paragraph>
             <Paragraph>
                 {content[selectedLanguage].p_2}: <a href="mailto:betinajanson@gmail.com">betinajanson@gmail.com</a>
             </Paragraph>
-            <Break><img src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/></Break>
+            <Break><img src={LogoPng}/></Break>
             <H2>{content[selectedLanguage].h2_2}</H2>
             <Paragraph>{content[selectedLanguage].p_3}:</Paragraph> 
             <Paragraph>         
@@ -57,7 +60,7 @@ const Contact = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
                     8703 Gmund Am Tegernsee
                 </Address>     
             </Paragraph>       
-            <Map src={process.env.PUBLIC_URL + "/media/map.png"}/>
+            <Map src={MapImage}/>
         </Main>
     )
 };

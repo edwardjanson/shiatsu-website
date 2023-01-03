@@ -1,6 +1,7 @@
 import { React, useEffect } from "react";
 import styled from "styled-components";
 
+import LogoPng from "../images/logo_betina.png";
 
 const Treatments = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
 
@@ -53,7 +54,7 @@ const Treatments = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
             <H2>{content[selectedLanguage].h2_1}</H2>
             <Paragraph>{content[selectedLanguage].p_1}</Paragraph>
             <Paragraph>{content[selectedLanguage].p_2}</Paragraph>
-            <Break><img src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/></Break>
+            <Break><img src={LogoPng}/></Break>
             <H2>{content[selectedLanguage].h2_2}</H2>
             <Paragraph>{content[selectedLanguage].p_3}</Paragraph>
             <Paragraph>{content[selectedLanguage].p_4}</Paragraph>

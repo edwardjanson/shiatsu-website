@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from "react-router-dom";
 
+import LogoPng from "../images/logo_betina.png";
+
 
 const NavBar = ({languageSettings, selectedLanguage, updateSelectedLanguage}) => {
 
@@ -35,7 +37,7 @@ const NavBar = ({languageSettings, selectedLanguage, updateSelectedLanguage}) =>
 
     return (
         <Section className={"section " + headerState} id="header">
-            <Logo><LogoImage src={process.env.PUBLIC_URL + "/media/logo_betina.png"}/><Link to={languageSettings[selectedLanguage].urls.homepage.path} onClick={() => updateBurgerOpen(false)}>Betina Janson</Link></Logo>
+            <Logo><LogoImage src={LogoPng}/><Link to={languageSettings[selectedLanguage].urls.homepage.path} onClick={() => updateBurgerOpen(false)}>Betina Janson</Link></Logo>
             <Burger className={burgerOpen ? "change" : ""} onClick={() => {
                 updateBurgerOpen(!burgerOpen);
                 setInitialLoad(false);
