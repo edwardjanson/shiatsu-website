@@ -67,7 +67,7 @@ const Homepage = ({selectedLanguage, canonical, hrefEnglish, hrefGerman}) => {
 
         de: {
                 title: `Shiatsu am Tegernsee | Betina Janson`,
-                description: `this is the description`,
+                description: ``,
                 h1: `Betina Janson – Shiatsu`,
                 h2_1: `Was ist Shiatsu?`,
                 p_1: `Shiatsu stammt ursprünglich aus Japan und ist vom japanischen Gesundheitsministerium als therapeutische Körperarbeit anerkannte Methode. 
@@ -117,7 +117,7 @@ const Homepage = ({selectedLanguage, canonical, hrefEnglish, hrefGerman}) => {
         document.querySelector("html").setAttribute("lang", selectedLanguage);
         document.title = content[selectedLanguage].title;
         document.querySelector("meta[name='description']").setAttribute("content", content[selectedLanguage].description);
-        document.querySelector("link[rel='canonical']").setAttribute("content", canonical);
+        document.querySelector("link[rel='canonical']").setAttribute("href", canonical);
         document.querySelector("link[hreflang='en']").setAttribute("href", hrefEnglish);
         document.querySelector("link[hreflang='de']").setAttribute("href", hrefGerman);
         document.querySelector("link[hreflang='x-default']").setAttribute("href", hrefEnglish);

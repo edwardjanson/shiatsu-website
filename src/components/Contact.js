@@ -10,7 +10,7 @@ const Contact = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
     const content = 
     {en: {
             title: `Contact & Location | Betina Janson Shiatsu Tegernsee`,
-            description: `this is the description`,
+            description: ``,
             h1: `Contact & Location`,
             h2_1: `Contact`,
             p_1: `Telephone`,
@@ -35,7 +35,7 @@ const Contact = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
         document.querySelector("html").setAttribute("lang", selectedLanguage);
         document.title = content[selectedLanguage].title;
         document.querySelector("meta[name='description']").setAttribute("content", content[selectedLanguage].description);
-        document.querySelector("link[rel='canonical']").setAttribute("content", canonical);
+        document.querySelector("link[rel='canonical']").setAttribute("href", canonical);
         document.querySelector("link[hreflang='en']").setAttribute("href", hrefEnglish);
         document.querySelector("link[hreflang='de']").setAttribute("href", hrefGerman);
         document.querySelector("link[hreflang='x-default']").setAttribute("href", hrefEnglish);
