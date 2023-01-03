@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserHistory } from 'history';
-import { render } from 'react-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -12,7 +11,7 @@ const history = createBrowserHistory();
 
 // S3 routing solution taken from: https://via.studio/journal/hosting-a-reactjs-app-with-routing-on-aws-s3
 if (root) {
-	const path = (/#!((?!png|jpeg).)*$/.exec(window.location.hash) || [])[1];
+	const path = (/#!(.*)$/.exec(window.location.hash) || [])[1];
 	if (path) {
 		history.replace(path);
 	}

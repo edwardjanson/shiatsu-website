@@ -150,6 +150,7 @@ const App = () => {
           hrefEnglish={`https://www.shiatsutegernsee.de${languageSettings.en.urls.testimonials.path}`}
           hrefGerman={`https://www.shiatsutegernsee.de${languageSettings.de.urls.testimonials.path}`}
           />} />
+        <Route path="/media/*" />
         <Route path="*" element={
           <Navigate to={languageSettings[selectedLanguage].urls.homepage.path} replace 
         />} />
