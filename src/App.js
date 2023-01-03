@@ -22,7 +22,9 @@ const App = () => {
     updatePageLoad(false);
 
     if (!pageLoad) {
-        if (window.location.pathname.startsWith("/en/")) {
+        if (window.location.pathname.startsWith("/media/")) {
+          window.location.reload();
+        } else if (window.location.pathname.startsWith("/en/")) {
           updateSelectedLanguage("en");
           updatePageLoad(true);
         } else {
