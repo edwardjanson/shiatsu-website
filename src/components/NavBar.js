@@ -16,7 +16,10 @@ const NavBar = ({languageSettings, selectedLanguage, updateSelectedLanguage}) =>
         if (lastY === 0) setHeaderState("show");
         window.onscroll = () => {
             let y = window.scrollY;
-            if (y > lastY) {
+            if (y <= 0) {
+                setHeaderState("show")
+            }
+            else if (y > lastY) {
                 setHeaderState("hide");
                 updateBurgerOpen(false);
             }

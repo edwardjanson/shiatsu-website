@@ -83,7 +83,7 @@ const Section = styled.div`
     position: relative;
     display: flex;
     justify-content: center;
-    max-width: 45rem;
+    max-width: 35rem;
     padding: 0 0.5rem;
     height: 10.25rem;
     margin: 4rem auto 2rem;
@@ -95,13 +95,7 @@ const Section = styled.div`
         height: 15rem;
     }
     @media (min-width: 521px) {
-        height: 19.4rem;
-    }
-    @media (min-width: 591px) {
-        height: 21.2rem;
-    }
-    @media (min-width: 751px) {
-        height: 24.6rem;
+        height: 20rem;
     }
 
     & .side {
