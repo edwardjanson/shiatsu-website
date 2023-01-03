@@ -22,7 +22,7 @@ const Contact = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
     de: {
             title: `Kontakt & Lage | Betina Janson Shiatsu am Tegernsee`,
             description: ``,
-            h1: `Kontak & Lage`,
+            h1: `Kontakt & Lage`,
             h2_1: `Kontakt`,
             p_1: `Telefon`,
             p_2: `Email`,
