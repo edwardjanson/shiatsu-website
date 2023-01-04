@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import styled from 'styled-components';
 
-import MountainBackground from "../images/mountains.jpeg";
+import SeaBackground from "../images/calm-sea.jpeg";
 
 
 const Gallery = ({media}) => {
@@ -67,7 +67,7 @@ const Container = styled.div`
 
     :before {    
         content: "";
-        background-image: url(${MountainBackground});
+        background-image: url(${SeaBackground});
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
