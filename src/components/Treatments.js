@@ -18,8 +18,7 @@ const Treatments = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
                 p_3: `Session duration 1 hour: 100 Euros`,
                 p_4: `You will receive a bill after the treatment. 24 hours notice required for cancellations. 
                 Please note that only cash payments are currently accepted.`,
-                p_5: `Member ASCA, the majority of private insurances will cover the costs of your treatment.`,
-                p_6: `Active member of Suisse Association of Shiatsu (ASS).`
+                p_5: `Active member of the German Association of Shiatsu.`
             },
 
         de: {
@@ -33,8 +32,7 @@ const Treatments = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
                 h2_2: `Tarife`,
                 p_3: `Behandlungsdauer 1 Stunde: 100 Euro`,
                 p_4: `Terminansage bitte 24 Stunden im voraus.`,
-                p_5: `Mitglied der ASCA, die Mehrheit der privaten Krankenkassen werden ihre Behandlung zurückerstatten.`,
-                p_6: `Aktives Mitglied der Schweizer Gesellschaft für Shiatsu (SGS).`
+                p_5: `Aktives Mitglied bei der Gesellschaft für Shiatsu in Deutschland (GSD).`,
             }
         }
 
@@ -59,11 +57,7 @@ const Treatments = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
             <Paragraph>{content[selectedLanguage].p_3}</Paragraph>
             <Paragraph>{content[selectedLanguage].p_4}</Paragraph>
             <Paragraph>{content[selectedLanguage].p_5}</Paragraph>
-            <Link href="http://www.asca.ch/" target="_blank">www.asca.ch</Link>
-            <br/>
-            <br/>
-            <Paragraph>{content[selectedLanguage].p_6}</Paragraph>
-            <Link href="https://shiatsuverband.ch/" target="_blank">shiatsuverband.ch</Link>
+            <Link href="https://www.shiatsu-gsd.de/" target="_blank">www.shiatsu-gsd.de</Link>
         </Main>
     )
 };
