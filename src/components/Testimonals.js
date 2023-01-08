@@ -9,12 +9,11 @@ const Contact = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
                 title: `Testimonials | Betina Janson Shiatsu`,
                 description: ``,
                 h1: `Testimonials`,
-                h2_1: `Martina`,
-                p_1: `"Sowohl Schulter-/Nackenschmerzen als auch Schmerzen im Lendenbereich, die bis in die Knie ausstrahlten, haben mich lange Zeit begleitet. Die Schmerzen waren z.T. so stark, dass ich nur noch 20 Minuten spazieren gehen konnte. 
-                Einiges hatte ich probiert, auch Akupunktur. 
-                Eine Freundin empfahl mir, zu Betina zu gehen … Mittlerweile bin ich (fast) schmerzfrei, wandere wieder mehrere Stunden, meiner Computerarbeit gehe ich problemlos nach. 
-                Shiatsu ist für mich sofortige und andauernde Entspannung, die Behandlung löst meine Muskelverspannungen. 
-                Ich bin sehr froh, diese Therapie und Betina gefunden zu haben."`
+                h2_1: `Doline`,
+                p_1: `"What a feeling of well-being after a Shiatsu session! 
+                I am always amazed by the interaction between the pressures on areas determined by Betina and the almost instantaneous release of muscular, nervous, tendon contractions etc… 
+                as well as the reactivation of the digestive system. 
+                For all this, many thanks to Betina."`
             },
 
         de: {
@@ -55,6 +54,7 @@ const Main = styled.div`
 `
 
 const H1 = styled.h1`
+    text-align: center;
     font-size: 2.5rem;
     padding: 2rem;
     display: flex;

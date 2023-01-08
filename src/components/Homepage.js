@@ -22,7 +22,8 @@ const Homepage = ({selectedLanguage, canonical, hrefEnglish, hrefGerman}) => {
         {en: {
                 title: `Shiatsu Tegernsee | Betina Janson`,
                 description: ``,
-                h1: `Betina Janson – Shiatsu`,
+                h1_1: `Betina Janson –`,
+                h1_2: `Shiatsu Tegernsee`,
                 h2_1: `Origin and Philosophy`,
                 p_1: `Shiatsu is a traditional form of therapy from Japan. 
                 Shiatsu shares the same roots as Chinese Acupuncture, both originating from the Traditional Chinese Medicine (TCM).`,
@@ -68,7 +69,8 @@ const Homepage = ({selectedLanguage, canonical, hrefEnglish, hrefGerman}) => {
         de: {
                 title: `Shiatsu am Tegernsee | Betina Janson`,
                 description: ``,
-                h1: `Betina Janson – Shiatsu`,
+                h1_1: `Betina Janson –`,
+                h1_2: `Shiatsu am Tegernsee`,
                 h2_1: `Was ist Shiatsu?`,
                 p_1: `Shiatsu stammt ursprünglich aus Japan und ist vom japanischen Gesundheitsministerium als therapeutische Körperarbeit anerkannte Methode. 
                 Die Wurzeln des Shiatsu liegen, genauso wie bei der Akupunktur, in der traditionellen chinesischen Medizin (TCM).`,
@@ -127,7 +129,10 @@ const Homepage = ({selectedLanguage, canonical, hrefEnglish, hrefGerman}) => {
         <Main>
             <Gallery media={media} />
             <Heading>
-                <H1>{content[selectedLanguage].h1}</H1>
+                <H1>
+                    <span>{content[selectedLanguage].h1_1}</span>
+                    <span>{content[selectedLanguage].h1_2}</span>
+                </H1>
                 <Profile src={ProfileImage}></Profile>
             </Heading>
             <H2>{content[selectedLanguage].h2_1}</H2>
@@ -181,17 +186,32 @@ const Heading = styled.div`
 `
 
 const Profile = styled.img`
-    width: 8rem;
+    width: 6.5rem;
     height: 100%;
     border-radius: 3%;
     border: 3px solid #d1d1d1;
+
+    @media (min-width: 550px) {
+        width: 8rem;
+    }
 `
 
 const H1 = styled.h1`
-    font-size: 2.5rem;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+
+    span {
+        font-size: 1.5rem;
+    }
+
+    @media (min-width: 550px) {
+        span {
+            padding-right: 2rem;
+            font-size: 2.5rem;
+        }
+    }
 `
 
 const H2 = styled.h2`
