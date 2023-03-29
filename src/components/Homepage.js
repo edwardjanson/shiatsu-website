@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Gallery from "./Gallery";
 import LogoPng from "../images/logo_betina.png";
 import ZenShiatsu from "../images/zen_shiatsu_1.png";
+import ShinTai3 from "../images/shin_tai_3.png";
 import ProfileImage from "../images/betina_janson.jpg";
 
 
@@ -11,17 +12,17 @@ const Homepage = ({selectedLanguage, canonical, hrefEnglish, hrefGerman}) => {
 
     const media = [
                     {images: [
-                        ZenShiatsu
+                        ZenShiatsu,
+                        ShinTai3
                     ]},
                     {videos: [
-                        "https://www.youtube.com/embed/OYWSySDHc20"
                     ]}
                 ]
     
     const content = 
         {en: {
                 title: `Shiatsu Tegernsee | Betina Janson`,
-                description: ``,
+                description: `Discover the healing power of Shiatsu in Tegernsee. Shiatsu is a Japanese therapy that balances the energy flow in our body, promoting overall well-being.`,
                 h1_1: `Betina Janson –`,
                 h1_2: `Shiatsu Tegernsee`,
                 h2_1: `Origin and Philosophy`,
@@ -68,7 +69,7 @@ const Homepage = ({selectedLanguage, canonical, hrefEnglish, hrefGerman}) => {
 
         de: {
                 title: `Shiatsu am Tegernsee | Betina Janson`,
-                description: ``,
+                description: `Erleben Sie Shiatsu am Tegernsee: Entspannen Sie Körper und Seele, lösen Sie Verspannungen und stärken Sie Ihre Selbstheilungskräfte. Mehr erfahren.`,
                 h1_1: `Betina Janson –`,
                 h1_2: `Shiatsu am Tegernsee`,
                 h2_1: `Was ist Shiatsu?`,

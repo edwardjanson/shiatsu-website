@@ -12,7 +12,7 @@ const ShinTai = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
     const content = 
         {en: {
                 title: `Shin Tai Tegernsee | Betina Janson Shiatsu`,
-                description: ``,
+                description: `Experience the transformative power of Shin Tai therapy with Betina Janson. This holistic approach works with the body's natural healing abilities.`,
                 h1: `Shin Tai`,
                 p_1: `Shin Tai Shiatsu has been developed by Saul Goodman in the 1980s and 1990s. 
                 He has been the founder of the International School of Shiatsu in Kiental (Switzerland). 
@@ -24,7 +24,7 @@ const ShinTai = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
 
         de: {
                 title: `Shin Tai am Tegernsee | Betina Janson Shiatsu`,
-                description: ``,
+                description: `Entdecken Sie Shin Tai Shiatsu: eine Ergänzung zur traditionellen Shiatsu Therapie. Löst Verspannungen, Toxine und verbessert Körperhaltung.`,
                 h1: `Shin Tai`,
                 p_1: `Shin Tai Shiatsu ist in den 80er und 90er Jahre von dem Amerikaner Saul Goodman entwickelt worden. 
                 Er ist ebenfalls der Gründer der Internationalen Shiatsu Schule (ISS) in Kiental (Schweiz). 

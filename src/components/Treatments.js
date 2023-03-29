@@ -8,7 +8,7 @@ const Treatments = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
     const content = 
         {en: {
                 title: `Shiatsu Treatments Tegernsee | Betina Janson Shiatsu`,
-                description: ``,
+                description: `Learn more about Betina Janson, her training and diplomas, as well as her rates for Shiatsu treatments.`,
                 h1: `Shiatsu Treatments`,
                 h2_1: `My Training`,
                 p_1: `After four years of studies at the International School of Shiatsu (ISS) in Geneva, I graduated in 2010. 
@@ -23,7 +23,7 @@ const Treatments = ({canonical, selectedLanguage, hrefEnglish, hrefGerman}) => {
 
         de: {
                 title: `Shiatsu Behandlungen am Tegernsee | Betina Janson Shiatsu`,
-                description: ``,
+                description: `Erfahren Sie mehr über Betina Janson, ihre Ausbildung, Diplome und ihre Tarife für Shiatsu-Behandlungen.`,
                 h1: `Shiatsu Behandlungen`,
                 h2_1: `Berufliche Laufbahn im Bereich des Shiatsu`,
                 p_1: `Nach einem vierjährigen Studium an der Internationalen Schule von Shiatsu (ISS) in Genf habe ich 2010 mein Diplom dort mit Erfolg abgeschlossen. 

@@ -170,7 +170,7 @@ const App = () => {
           <Link to={languageSettings[selectedLanguage].urls.contact.path}>{languageSettings[selectedLanguage].urls.contact.name}</Link>
         </FooterLinks>
         <Copyright>
-          © Betina Janson 2023
+          © Shiatsu am Tegernsee - Betina Janson {new Date().getFullYear()}
         </Copyright>
       </Footer>
     </Router>
